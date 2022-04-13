@@ -42,7 +42,7 @@ body{
 .informacoesLogin input{
 	border-radius: 5px;
 	width: 100%;
-	height: 25px;
+	height: -webit-fill-available;
 	outline: 0;
 	padding: 5px;
 }
@@ -219,3 +219,6 @@ ul{
 	margin-left: 5px;
 }
 
+@media only screen and (max-width:420px){
+	                    	
+}
