@@ -10,9 +10,12 @@ body{
 }
 
 .formLogin{
-	width: 400px;
-    	margin: 0 auto;
-    	transform: translate(0, 50%);
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .cardLogin{
@@ -41,9 +44,10 @@ body{
 
 .informacoesLogin input{
 	border-radius: 5px;
-	width: -webit-fill-available;
-	height: 25px;
-	outline: 0;
+    width: -webkit-fill-available;
+    height: 25px;
+    outline: 0;
+    padding: 5px;
 }
 
 .cardLogin button{
@@ -214,6 +218,8 @@ ul{
 	margin-left: 5px;
 }
 
-@media only screen and (max-width:420px){
-	                    	
+@media only screen and (min-width:600px){
+	.cardLogin{
+		width: 400px;
+	}
 }
