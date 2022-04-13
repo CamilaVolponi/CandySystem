@@ -82,7 +82,7 @@ body{
 /*tela cadastro*/
 
 .logoCadastro{
-	width: 250px;
+	width: 150px;
 	margin-right: auto;
 	display: block;
 	padding: 5px;
@@ -98,7 +98,7 @@ header{
 	font-weight: bold;
 	font-size: 22px;
 	position: absolute;
-	top: 7%;
+	top: 3%;
 	right: 40%;
 }
 
