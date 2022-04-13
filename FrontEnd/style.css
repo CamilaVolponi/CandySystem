@@ -11,8 +11,8 @@ body{
 
 .formLogin{
 	width: 400px;
-	margin: auto;	
-	padding-top: 200px;
+    	margin: 0 auto;
+    	transform: translate(0, 50%);
 }
 
 .cardLogin{
