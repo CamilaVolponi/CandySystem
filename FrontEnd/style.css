@@ -12,7 +12,7 @@ body{
 .formLogin{
 	width: 400px;
 	margin: auto;
-	padding-top: 200px;
+	
 }
 
 .cardLogin{
@@ -20,6 +20,7 @@ body{
 	background-color: #FCD9DF;
 	padding: 20px;
 	border-radius: 5px;
+	margin: 10px 10px;
 }
 
 .cardLogin h1{
