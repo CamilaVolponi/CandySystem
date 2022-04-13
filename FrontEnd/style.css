@@ -41,10 +41,9 @@ body{
 
 .informacoesLogin input{
 	border-radius: 5px;
-	width: 100%;
-	height: -webit-fill-available;
+	width: -webit-fill-available;
+	height: 25px;
 	outline: 0;
-	padding: 10px;
 }
 
 .cardLogin button{
