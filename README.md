@@ -7,7 +7,7 @@ Deploy: https://camilavolponi.github.io/CandySystem/
 
 
 
-# 2. Decições de projeto:
+# 2. Decisões de projeto:
 ## 2.1. Diagrama de classe:
 [![Diagrama de Classes do Candy System](/ImagensProjeto/DiagramaDeClassespng.png?raw=true "Diagrama de Classes do Candy System")]
 
