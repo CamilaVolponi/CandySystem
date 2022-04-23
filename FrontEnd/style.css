@@ -183,8 +183,8 @@ body{
 .container{
 	display: grid;
 	grid-template-columns: 1fr 3fr;
-	grid-template-rows: 10vh 90vh 10vh;
-	grid-template-areas: "aside header"
+	grid-template-rows: 10vh 80vh 10vh;
+	grid-template-areas: "header main"
 						"aside main"
 						"footer footer"
 }
@@ -212,10 +212,9 @@ footer{
 .informacaoUsuario{
 	font-weight: bold;
 	font-size: 22px;
-	top: 3%;
-	left: 90%;
 	color: black;
-	position: absolute;
+	text-align: center;
+	padding: 20px;
 }
 
 li a{
@@ -235,7 +234,7 @@ li a:hover{
 	position: absolute;
 	background-color: #3F3F46;
 	width: 300px;
-	height: 100%;
+	height: 80%;
 	border-radius: 15px;
 	margin: 10px;
 }
@@ -243,17 +242,9 @@ li a:hover{
 .containerNotificacoes{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-}
-
-.notificacoes{
-	box-shadow: 0px 1px 3px 1px black;
-	background-color: #F7F7F7;
-	height: 550px;
-	border-radius: 10px;
-	margin-top: 20px;
-	color: black;
-	font-size: 20px;
-	margin: 10px;
+	grid-template-rows: 50vh 50vh;
+	grid-template-areas: "notificacoesEstoque notificacoesPedidos"
+						"notificacoesEstoque calendario"
 }
 
 .titleNotificacao{
@@ -262,6 +253,51 @@ li a:hover{
 	background-color: #E53471;
 	border-radius: 10px 10px 0 0;
 	color: white;
+}
+
+.notificacoesEstoque{
+	box-shadow: 0px 1px 3px 1px black;
+	background-color: #F7F7F7;
+	height: 560px;
+	border-radius: 10px;
+	color: black;
+	font-size: 20px;
+	margin: 10px;
+	grid-area: notificacoesEstoque;
+}
+
+.notificacoesPedidos{
+	box-shadow: 0px 1px 3px 1px black;
+	background-color: #F7F7F7;
+	height: 290px;
+	border-radius: 10px;
+	color: black;
+	font-size: 20px;
+	margin: 10px;
+	grid-area: notificacoesPedidos;
+}
+
+.calendario{
+	box-shadow: 0px 1px 3px 1px black;
+	background-color: #F7F7F7;
+	height: 245px;
+	border-radius: 10px;
+	color: black;
+	font-size: 20px;
+	margin: 10px;
+}
+
+.calendario img{
+	width:60%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.notificacoesEstoque p, .notificacoesPedidos p{
+	text-decoration: none;
+	font-size: 20px;	
+	padding: 10px;
 }
 
 /*media*/
