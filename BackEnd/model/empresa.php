@@ -8,15 +8,17 @@ class Empresa {
     }
     
     public function printNome(): void {
-        echo "Nome: " . $this->nome . "<br>";
+        echo "Nome: " . $this->nome . "\n";
     }
     public function printCnpj(): void {
-        echo "Cnpj: " . $this->cnpj . "<br>";
+        echo "Cnpj: " . $this->cnpj . "\n";
     }
     
     public function printAllInfos(): void {
+        echo "<pre>";
         $this->printNome();
         $this->printCnpj();
+        echo "</pre>";
     }
 }
 ?>

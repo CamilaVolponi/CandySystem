@@ -11,23 +11,25 @@
 		}
 
         public function printNome(): void {
-            echo "Nome: " . $this->nome . "<br>";
+            echo "Nome: " . $this->nome . "\n";
         }
         public function printCpf(): void {
-            echo "Cpf: " . $this->cpf . "<br>";
+            echo "Cpf: " . $this->cpf . "\n";
         }
         public function printTelefone(): void {
-            echo "Telefone: " . $this->telefone . "<br>";
+            echo "Telefone: " . $this->telefone . "\n";
         }
         public function printEmail(): void {
-            echo "Email: " . $this->email . "<br>";
+            echo "Email: " . $this->email . "\n";
         }
         
         public function printAllInfos(): void {
+            echo "<pre>";
             $this->printNome();
             $this->printCpf();
             $this->printTelefone();
             $this->printEmail();
+            echo "</pre>";
         }
 	}
 ?>

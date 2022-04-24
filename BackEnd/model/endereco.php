@@ -13,28 +13,29 @@ class Endereco {
 	}
     
     public function printCep(): void {
-        echo "Cep: " . $this->cep . "<br>";
+        echo "Cep: " . $this->cep . "\n";
     }
     public function printRua(): void {
-        echo "Rua: " . $this->rua . "<br>";
+        echo "Rua: " . $this->rua . "\n";
     }
     public function printNumero(): void {
-        echo "Numero: " . $this->numero . "<br>";
+        echo "Numero: " . $this->numero . "\n";
     }
     public function printBairro(): void {
-        echo "Bairro: " . $this->bairro . "<br>";
+        echo "Bairro: " . $this->bairro . "\n";
     }
     public function printCidade(): void {
-        echo "Cidade: " . $this->cidade . "<br>";
+        echo "Cidade: " . $this->cidade . "\n";
     }
     public function printComplemento(): void {
-        echo "Complemento: " . $this->complemento . "<br>";
+        echo "Complemento: " . $this->complemento . "\n";
     }
     public function printReferencia(): void {
-        echo "Referencia: " . $this->referencia . "<br>";
+        echo "Referencia: " . $this->referencia . "\n";
     }
     
     public function printAllInfos(): void {
+        echo "<pre>";
         $this->printCep();
         $this->printRua();
         $this->printNumero();
@@ -42,6 +43,7 @@ class Endereco {
         $this->printCidade();
         $this->printComplemento();
         $this->printReferencia();
+        echo "</pre>";
     }
 }
 ?>

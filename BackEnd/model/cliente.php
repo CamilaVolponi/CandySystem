@@ -9,15 +9,17 @@ class Cliente {
     }
 
     public function printNome(): void {
-        echo "Nome: " . $this->nome . "<br>";
+        echo "Nome: " . $this->nome . "\n";
     }
     public function printTelefone(): void {
-        echo "Telefone: " . $this->telefone . "<br>";
+        echo "Telefone: " . $this->telefone . "\n";
     }
     
     public function printAllInfos(): void {
+        echo "<pre>";
         $this->printNome();
         $this->printTelefone();
+        echo "</pre>";
     }
 }
 ?>

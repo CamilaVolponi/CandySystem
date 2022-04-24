@@ -11,15 +11,17 @@ class Funcionario extends Pessoa {
     }
 
     public function printCargo(): void {
-        echo "Cargo: " . $this->cargo . "<br>";
+        echo "Cargo: " . $this->cargo . "\n";
     }
     
     public function printAllInfos(): void {
+        echo "<pre>";
         $this->printNome();
         $this->printCpf();
         $this->printTelefone();
         $this->printEmail();
         $this->printCargo();
+        echo "</pre>";
     }
 }
 ?>
