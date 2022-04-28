@@ -160,9 +160,8 @@ body{
 	padding:  5px 0;
 }
 
-/*tela principal*/
 
-/*logo e icones*/
+/*possui em todas as telas - inicio*/
 .logo{
 	width: 150px;
 	margin:auto;
@@ -182,15 +181,11 @@ body{
 
 .container{
 	display: grid;
-	grid-template-columns: 1fr 3fr;
+	grid-template-columns: 1fr 5fr;
 	grid-template-rows: 10vh 80vh 10vh;
-	grid-template-areas: "header main"
+	grid-template-areas: "aside main"
 						"aside main"
 						"footer footer"
-}
-
-header{
-	grid-area: header;
 }
 
 main{
@@ -205,14 +200,14 @@ footer{
 	grid-area: footer;
 }
 
-.teste{
-	padding-bottom: 50px;
+.principal{
+	background-color: #E53471;
 }
 
 .informacaoUsuario{
 	font-weight: bold;
 	font-size: 22px;
-	color: black;
+	color: white;
 	text-align: center;
 	padding: 20px;
 }
@@ -233,18 +228,20 @@ li a:hover{
 .menu{
 	position: absolute;
 	background-color: #3F3F46;
-	width: 300px;
-	height: 80%;
+	width: 15%;
+	height: 90%;
 	border-radius: 15px;
 	margin: 10px;
 }
+/*possui em todas as telas - inicio*/
 
+/*tela principal*/
 .containerNotificacoes{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 50vh 50vh;
-	grid-template-areas: "notificacoesEstoque notificacoesPedidos"
-						"notificacoesEstoque calendario"
+	grid-template-areas: "notificacoesPedidos calendario"
+						"notificacoesPedidos notificacoes"
 }
 
 .titleNotificacao{
@@ -255,21 +252,10 @@ li a:hover{
 	color: white;
 }
 
-.notificacoesEstoque{
-	box-shadow: 0px 1px 3px 1px black;
-	background-color: #F7F7F7;
-	height: 560px;
-	border-radius: 10px;
-	color: black;
-	font-size: 20px;
-	margin: 10px;
-	grid-area: notificacoesEstoque;
-}
-
 .notificacoesPedidos{
 	box-shadow: 0px 1px 3px 1px black;
 	background-color: #F7F7F7;
-	height: 290px;
+	height: 560px;
 	border-radius: 10px;
 	color: black;
 	font-size: 20px;
@@ -280,11 +266,23 @@ li a:hover{
 .calendario{
 	box-shadow: 0px 1px 3px 1px black;
 	background-color: #F7F7F7;
+	height: 290px;
+	border-radius: 10px;
+	color: black;
+	font-size: 20px;
+	margin: 10px;
+	grid-area: calendario;
+}
+
+.notificacoes{
+	box-shadow: 0px 1px 3px 1px black;
+	background-color: #F7F7F7;
 	height: 245px;
 	border-radius: 10px;
 	color: black;
 	font-size: 20px;
 	margin: 10px;
+	grid-area: notificacoes;
 }
 
 .calendario img{
@@ -294,7 +292,7 @@ li a:hover{
     margin-right: auto
 }
 
-.notificacoesEstoque p, .notificacoesPedidos p{
+.notificacoesPedidos p{
 	text-decoration: none;
 	font-size: 20px;	
 	padding: 10px;
