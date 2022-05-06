@@ -1,5 +1,11 @@
 <?php
 
+enum TipoCargo : string {
+    case Proprietario = "Proprietário";
+    case Cozinheiro = "Cozinheiro";
+    case Confeiteiro = "Confeiteiro";
+}
+
 class Cargo {
     /*
     Design Pattern: Peso mosca
@@ -29,14 +35,15 @@ class Cargo {
     public function printDataSaida(): void {
         echo "Data de saída: " . var_dump($this->unidadeDataSaida) . "\n";
     }
-    public function getDescricao(): string {
-        return $this->tipoCargo.getDescricao();
+    public function printTipoCargo(): void {
+        echo "Cargo: " . var_dump($this->tipoCargo) . "\n";
     }
         
     public function printAllInfos(): void {
         echo "<pre>";
         $this->printDataEntrada();
         $this->printDataSaida();
+        $this->printTipoCargo();
         echo "</pre>";
     }
 }
