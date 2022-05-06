@@ -37,10 +37,10 @@ class Pedido {
     public function printFormaPagamento(): void {
         echo "Forma de Pagamento: " . var_dump($this->formaPagamento) . "\n";
     }
-    public function printPessoa(): void {
+    public function printResponsavel(): void {
         echo "<fieldset>";
-        echo "<legend>Pessoa:</legend>";
-        $this->pessoa->printAllInfos();
+        echo "<legend>Responsavel:</legend>";
+        $this->responsavel->printAllInfos();
         echo "</fieldset>";
     }
     public function printProdutosPedidos(): void {
@@ -57,7 +57,7 @@ class Pedido {
         $this->printDataEntrega();
         $this->printHorario();
         $this->printFormaPagamento();
-        $this->printPessoa();
+        $this->printResponsavel();
         $this->printProdutosPedidos();
         echo "</pre>";
     }

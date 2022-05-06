@@ -33,7 +33,7 @@ class Cargo {
         echo "Data de entrada: " . $this->dataEntrada . "\n";
     }
     public function printDataSaida(): void {
-        echo "Data de saída: " . var_dump($this->unidadeDataSaida) . "\n";
+        echo "Data de saída: " . $this->dataEntrada . "\n";
     }
     public function printTipoCargo(): void {
         echo "Cargo: " . var_dump($this->tipoCargo) . "\n";

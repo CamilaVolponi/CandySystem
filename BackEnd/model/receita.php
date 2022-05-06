@@ -1,5 +1,5 @@
 <?php
-require_once "ingrediente.php"
+require_once "ingrediente.php";
 
 class Receita {
     private $quantidade;
