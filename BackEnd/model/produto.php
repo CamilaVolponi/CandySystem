@@ -20,5 +20,6 @@ class Produto {
         $this->printPreco();
         echo "</pre>";
     }
+    
 }
 ?>
