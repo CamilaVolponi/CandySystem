@@ -1,7 +1,6 @@
 @extends('templates.logado')
 
-{{-- Como já tem um padrão esse é opcional --}}
-{{-- @section('title', 'Candy System') --}}
+@section('title', 'Home - Candy System')
 
 @section('content')		
 	<main>
