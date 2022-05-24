@@ -54,7 +54,9 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "process-timeout": 600,
+        "github-protocols": ["https"]
     },
     "minimum-stability": "dev",
     "prefer-stable": true

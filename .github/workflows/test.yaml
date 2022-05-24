@@ -1,0 +1,33 @@
+on:
+  push:
+    branches:
+      - test
+name: 🚀 Test website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy to test
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: Get PHP
+      uses: shivammathur/setup-php@v2
+
+    - name: Install Dependecies
+      run: composer install
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.ftp_host }}
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
+        server-dir: test/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          _FILES_OF_README/**
+          README_LARAVEL.md
+          README.md

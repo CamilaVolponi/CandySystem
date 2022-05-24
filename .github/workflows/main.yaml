@@ -1,0 +1,39 @@
+on:
+  push:
+    branches:
+      - main
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy to prodution
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: Get PHP
+      uses: shivammathur/setup-php@v2
+
+    - name: Build to prodution (1/3)
+      run: composer install --no-dev -o
+
+    - name: Build to prodution (2/3)
+      run: php artisan config:cache
+
+    - name: Build to prodution (3/3)
+      run: php artisan route:cache
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.ftp_host }}
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
+        server-dir: main/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          _FILES_OF_README/**
+          README_LARAVEL.md
+          README.md
