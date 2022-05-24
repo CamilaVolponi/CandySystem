@@ -27,10 +27,11 @@ jobs:
           _FILES_OF_README/**
           README_LARAVEL.md
           README.md
-  
+
   build: 
     needs: deploy
     name: 🛠️ Build to test
+    runs-on: ubuntu-latest
     uses: appleboy/ssh-action@v0.1.4
     with:
       host: ${{ secrets.SSH_REMOTE_HOST }}

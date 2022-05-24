@@ -31,6 +31,7 @@ jobs:
   build: 
     needs: deploy
     name: 🛠️ Build to prodution
+    runs-on: ubuntu-latest
     uses: appleboy/ssh-action@v0.1.4
     with:
       host: ${{ secrets.SSH_REMOTE_HOST }}
