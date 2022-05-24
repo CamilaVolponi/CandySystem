@@ -30,15 +30,17 @@ jobs:
 
   build: 
     needs: deploy
-    name: 🛠️ Build to test
+    name: 🛠️ Build to prodution
     runs-on: ubuntu-latest
-    uses: appleboy/ssh-action@v0.1.4
-    with:
-      host: ${{ secrets.SSH_REMOTE_HOST }}
-      username: ${{ secrets.SSH_REMOTE_USER }}
-      key: ${{ secrets.SERVER_SSH_KEY }}
-      port: ${{ secrets.SSH_REMOTE_PORT }}
-      script: |
-        cd ${{ secrets.SSH_REMOTE_TARGET_TEST }}
-        composer install
+    steps:
+      - name: 🔐 Executing Commands by SSH
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_REMOTE_HOST }}
+          username: ${{ secrets.SSH_REMOTE_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SSH_REMOTE_PORT }}
+          script: |
+            cd ${{ secrets.SSH_REMOTE_TARGET_TEST }}
+            composer install
   
