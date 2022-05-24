@@ -13,6 +13,8 @@ jobs:
     
     - name: Get Composer
       uses: php-actions/composer@v6
+
+    - name: Install Dependecies
       run: composer install
     
     - name: Build to prodution (1/3)

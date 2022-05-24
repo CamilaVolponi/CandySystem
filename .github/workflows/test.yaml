@@ -10,7 +10,11 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
+
+    - name: Get Composer
       uses: php-actions/composer@v6
+
+    - name: Install Dependecies
       run: composer install
     
     - name: 📂 Sync files
