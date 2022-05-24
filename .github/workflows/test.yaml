@@ -14,9 +14,6 @@ jobs:
     - name: Get PHP
       uses: shivammathur/setup-php@v2
 
-    - name: Get Composer
-      uses: php-actions/composer@v6
-
     - name: Install Dependecies
       run: composer install
     
@@ -31,6 +28,6 @@ jobs:
           **/.git*
           **/.git*/**
           **/node_modules/**
-          _FILES_OF_README
+          _FILES_OF_README/**
           README_LARAVEL.md
           README.md
