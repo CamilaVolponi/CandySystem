@@ -10,7 +10,10 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
-    
+        
+    - name: Get PHP
+      uses: shivammathur/setup-php@v2
+
     - name: Get Composer
       uses: php-actions/composer@v6
 
