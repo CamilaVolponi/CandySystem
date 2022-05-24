@@ -10,10 +10,16 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
+      uses: php-actions/composer@v6
+      run: composer install
     
-    - name: Build to prodution
+    - name: Build to prodution (1/3)
       run: composer install --optimize-autoload --no-dev
+
+    - name: Build to prodution (2/3)
       run: php artisan config:cache
+
+    - name: Build to prodution (3/3)
       run: php artisan route:cache
 
     - name: 📂 Sync files
