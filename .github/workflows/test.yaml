@@ -4,30 +4,40 @@ on:
       - test
 name: 🚀 Test website on push
 jobs:
-  web-deploy:
+  deploy:
     name: 🎉 Deploy to test
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
     
-    - name: Get PHP
-      uses: shivammathur/setup-php@v2
-
-    - name: Install Dependecies
-      run: composer install
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: ${{ secrets.ftp_host }}
-        username: ${{ secrets.ftp_username }}
-        password: ${{ secrets.ftp_password }}
-        server-dir: test/
-        exclude: |
+    - name: 🔑 Deploy via ssh
+      uses: easingthemes/ssh-deploy@v2
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        ARGS: "-rltgoDzvO --delete"
+        # SOURCE:
+        REMOTE_HOST: ${{ secrets.SSH_REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.SSH_REMOTE_USER }}
+        TARGET: ${{ secrets.SSH_REMOTE_TARGET_TEST }}
+        EXCLUDE: |
           **/.git*
           **/.git*/**
           **/node_modules/**
           _FILES_OF_README/**
           README_LARAVEL.md
           README.md
+  
+  build: 
+    needs: deploy
+    name: 🛠️ Build to test
+    uses: appleboy/ssh-action@master
+    with:
+      host: ${{ secrets.SSH_REMOTE_HOST }}
+      username: ${{ secrets.SSH_REMOTE_USER }}
+      key: ${{ secrets.SERVER_SSH_KEY }}
+      port: ${{ secrets.SSH_REMOTE_PORT }}
+      script: |
+        cd ${{ secrets.SSH_REMOTE_TARGET_TEST }}
+        composer install
+  
