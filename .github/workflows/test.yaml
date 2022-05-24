@@ -40,5 +40,6 @@ jobs:
           port: ${{ secrets.SSH_REMOTE_PORT }}
           script: |
             cd ${{ secrets.SSH_REMOTE_TARGET_TEST }}
+            echo "$PWD"
             composer install
   
