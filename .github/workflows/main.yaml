@@ -31,7 +31,7 @@ jobs:
   build: 
     needs: deploy
     name: 🛠️ Build to prodution
-    uses: appleboy/ssh-action@master
+    uses: appleboy/ssh-action@v0.1.4
     with:
       host: ${{ secrets.SSH_REMOTE_HOST }}
       username: ${{ secrets.SSH_REMOTE_USER }}
