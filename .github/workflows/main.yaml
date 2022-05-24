@@ -38,6 +38,6 @@ jobs:
           **/.git*
           **/.git*/**
           **/node_modules/**
-          _FILES_OF_README
+          _FILES_OF_README/**
           README_LARAVEL.md
           README.md
