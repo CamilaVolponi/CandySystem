@@ -17,7 +17,7 @@ jobs:
         server: ${{ secrets.ftp_host }}
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        server-dir: test/
+        server-dir: ${{ secrets.SSH_REMOTE_TARGET_TEST }}/
         exclude: |
           **/.git*
           **/.git*/**
