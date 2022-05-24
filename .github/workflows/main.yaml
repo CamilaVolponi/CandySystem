@@ -15,10 +15,11 @@ jobs:
       uses: shivammathur/setup-php@v2
 
     - name: Build to prodution (1/3)
-      uses: php-actions/composer@v6
-      with:
-        dev: no
-        args: -o
+      run: composer install --no-dev -o
+      # uses: php-actions/composer@v6
+      # with:
+      #   dev: no
+      #   args: -o
 
     - name: Build to prodution (2/3)
       run: php artisan config:cache
