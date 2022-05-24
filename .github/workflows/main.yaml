@@ -5,12 +5,17 @@ on:
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name: 🎉 Deploy to prodution
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
     
+    - name: Build to prodution
+      run: composer install --optimize-autoload --no-dev
+      run: php artisan config:cache
+      run: php artisan route:cache
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
