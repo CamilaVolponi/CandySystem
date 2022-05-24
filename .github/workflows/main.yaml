@@ -4,24 +4,12 @@ on:
       - main
 name: 🚀 Deploy website on push
 jobs:
-  web-deploy:
+  deploy:
     name: 🎉 Deploy to prodution
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
-    
-    - name: Get PHP
-      uses: shivammathur/setup-php@v2
-
-    - name: Build to prodution (1/3)
-      run: composer install --no-dev -o
-
-    - name: Build to prodution (2/3)
-      run: php artisan config:cache
-
-    - name: Build to prodution (3/3)
-      run: php artisan route:cache
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -29,7 +17,7 @@ jobs:
         server: ${{ secrets.ftp_host }}
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        server-dir: main/
+        server-dir: ${{ secrets.SSH_REMOTE_TARGET_MAIN }}/
         exclude: |
           **/.git*
           **/.git*/**
@@ -37,3 +25,22 @@ jobs:
           _FILES_OF_README/**
           README_LARAVEL.md
           README.md
+    
+  build: 
+    needs: deploy
+    name: 🛠️ Build to prodution
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔐 Executing Commands by SSH
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_REMOTE_HOST }}
+          username: ${{ secrets.SSH_REMOTE_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SSH_REMOTE_PORT }}
+          script: |
+            cd ${{ secrets.SSH_REMOTE_TARGET_MAIN }}
+            echo "$PWD"
+            composer install --no-dev -o
+            php artisan config:cache
+            php artisan route:cache
