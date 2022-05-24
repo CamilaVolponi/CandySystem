@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
     
     - name: 🔑 Deploy via ssh
-      uses: easingthemes/ssh-deploy@v2
+      uses: easingthemes/ssh-deploy@v2.2.11
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
         ARGS: "-rltgoDzvO --delete"
