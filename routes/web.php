@@ -31,6 +31,12 @@ Route::get('/meus_dados', [MeusDadosController::class, 'index'])->name('meus_dad
 
 Route::get('/pedidos', [PedidosController::class, 'index'])->name('pedidos.index');
 
-Route::get('/receitas', [ReceitasController::class, 'index'])->name('receitas.index');
+
+Route::prefix("receitas")->group(function () {
+    Route::get('/', [ReceitasController::class, 'index'])->name('receitas.index');
+    Route::get('/{produto}/passo/create', [ReceitasController::class, 'store'])->name('receitas.create');
+    Route::get('/{produto}/ingrediente/create', [ReceitasController::class, 'store'])->name('receitas.create');
+});
+
 
 Route::get('/relatorios', [RelatoriosController::class, 'index'])->name('relatorios.index');
