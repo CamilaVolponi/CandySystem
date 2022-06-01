@@ -32,19 +32,19 @@ class ReceitasController extends Controller
 //
 //        $produto->modos_de_preparo()->create($data);
 
-        $data = [
-            "descricao" => "Maizena",
-            "unidadeDeMedida" => TipoUnidadeDeMedida::GRAMAS,
-            "quantidade" => 545
-        ];
+//        $data = [
+//            "descricao" => "Maizena",
+//            "unidadeDeMedida" => TipoUnidadeDeMedida::GRAMAS,
+//            "quantidade" => 545
+//        ];
+//
+//        $ingredientes = $produto->ingredientes()->create($data);
 
-        $ingredientes = $produto->ingredientes()->create($data);
-
-        dd($ingredientes->toArray());
+        $ingredientes = $produto->ingredientes()->get()->toArray();
 
         $receitas = $produto->modos_de_preparo()->get()->toArray();
 
-        dd($receitas);
+        dd($ingredientes, $receitas);
 
         return view('receitas');
     }

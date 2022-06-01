@@ -13,15 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('modos_de_preparo', function (Blueprint $table) {
+        Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("produto_id")
-                ->constrained("produtos")
+            $table->foreignId("cliente_id")
+                ->constrained("clientes")
                 ->references("id")
                 ->onDelete("CASCADE")
                 ->onUpdate("CASCADE");
-            $table->string("descricao_do_passo");
-            $table->integer("ordem");
+            $table->string("cep");
+            $table->string("rua");
+            $table->string("bairro");
+            $table->string("cidade");
+            $table->integer("numero")->nullable();
+            $table->text("complemento")->nullable();
+            $table->text("referencia")->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modos_de_preparo');
+        Schema::dropIfExists('enderecos');
     }
 };

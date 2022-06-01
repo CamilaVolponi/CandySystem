@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\TipoUnidadeDeMedida;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,12 @@ class ModoDePreparoFactory extends Factory
      */
     public function definition(): array
     {
+        $faker = \Faker\Factory::create();
+        $fakerU = $faker->unique();
+        $count = $fakerU->randomDigitNotZero();
         return [
-            //
+            "descricao_do_passo" => "Passo " . $count,
+            "ordem" => $count
         ];
     }
 }

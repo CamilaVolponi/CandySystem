@@ -27,15 +27,24 @@ Route::post('/login', [LoginController::class, 'sign_in'])->name('login.sign_in'
 
 Route::get('/cadastro', [CadastroController::class, 'index'])->name('cadastro.index');
 
-Route::get('/meus_dados', [MeusDadosController::class, 'index'])->name('meus_dados.index');
+Route::prefix("/admin")->group(function (){
+    Route::get("/add-colaborador", function (){
+        echo "<h1>Adicionar Colaborador<h1>";
+    })->name("admin.add-colaborator");
+});
+
+Route::prefix("meus-dados")->group(function(){
+    Route::get('/', [MeusDadosController::class, 'index'])->name('meus-dados.index');
+    Route::get('/endereco', [MeusDadosController::class, 'endereco'])->name('meus-dados.endereco');
+});
 
 Route::get('/pedidos', [PedidosController::class, 'index'])->name('pedidos.index');
 
 
 Route::prefix("receitas")->group(function () {
     Route::get('/', [ReceitasController::class, 'index'])->name('receitas.index');
-    Route::get('/{produto}/passo/create', [ReceitasController::class, 'store'])->name('receitas.create');
-    Route::get('/{produto}/ingrediente/create', [ReceitasController::class, 'store'])->name('receitas.create');
+    Route::get('/{produto}/create/passo', [ReceitasController::class, 'store'])->name('receitas.create');
+    Route::get('/{produto}/create/ingrediente', [ReceitasController::class, 'store'])->name('receitas.create');
 });
 
 

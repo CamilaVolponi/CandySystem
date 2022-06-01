@@ -23,7 +23,7 @@
                     <li>
                         <a href="{{ route('receitas.index') }}">
                             <img src="{{ asset('imagens/receitas.png') }}" class="iconeMenu">
-                            Receitas
+                            Produtos
                         </a>
                     </li>
                     <li>
@@ -33,7 +33,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('meus_dados.index') }}">
+                        <a href="{{ route('meus-dados.index') }}">
                             <img src="{{ asset('imagens/meusDados.png') }}" class="iconeMenu">
                             Meus Dados
                         </a>

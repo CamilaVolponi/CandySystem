@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ModoDePreparo extends Model
+class Endereco extends Model
 {
     use HasFactory;
 
-    protected $table = "modos_de_preparo";
+    protected $table = "enderecos";
 
     protected $fillable = [
-        "descricao_do_passo", "ordem"
+        "cep", "rua", "bairro", "cidade", "numero",
+        "complemento", "referencia"
     ];
 }

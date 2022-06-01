@@ -13,9 +13,7 @@ class Ingrediente extends Model
     protected $table = "ingredientes";
 
     protected $fillable = [
-        "descricao",
-        "unidadeDeMedida",
-        "quantidade"
+        "descricao", "unidadeDeMedida", "quantidade"
     ];
 
     protected $casts = [

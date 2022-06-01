@@ -13,15 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('modos_de_preparo', function (Blueprint $table) {
+        Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("produto_id")
-                ->constrained("produtos")
-                ->references("id")
-                ->onDelete("CASCADE")
-                ->onUpdate("CASCADE");
-            $table->string("descricao_do_passo");
-            $table->integer("ordem");
+            $table->string("nome");
+            $table->string("telefone");
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modos_de_preparo');
+        Schema::dropIfExists('clientes');
     }
 };
