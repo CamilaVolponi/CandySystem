@@ -15,6 +15,6 @@
 		}
 	</style>
 	<main>
-		<h1>Tela de Pedidos</h1>
+		<h1>Tela de Pedidos - Teste</h1>
 	</main>
 @endsection
