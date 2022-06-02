@@ -16,9 +16,7 @@ class EnderecoFactory extends Factory
      */
     public function definition()
     {
-//        $this->faker = new \Faker\Generator();
         $this->faker->addProvider(new \Faker\Provider\pt_BR\Address($this->faker));
-
         return [
             "cep" => $this->faker->postcode,
             "rua" => $this->faker->streetName,
