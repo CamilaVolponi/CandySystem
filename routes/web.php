@@ -5,7 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\MeusDadosController;
 use App\Http\Controllers\PedidosController;
-use App\Http\Controllers\ReceitasController;
+use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\RelatoriosController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,10 +41,10 @@ Route::prefix("meus-dados")->group(function(){
 Route::get('/pedidos', [PedidosController::class, 'index'])->name('pedidos.index');
 
 
-Route::prefix("receitas")->group(function () {
-    Route::get('/', [ReceitasController::class, 'index'])->name('receitas.index');
-    Route::get('/{produto}/create/passo', [ReceitasController::class, 'store'])->name('receitas.create');
-    Route::get('/{produto}/create/ingrediente', [ReceitasController::class, 'store'])->name('receitas.create');
+Route::prefix("/produtos")->group(function () {
+    Route::get('/', [ProdutosController::class, 'index'])->name('produtos.index');
+    Route::get('/{produto}/create/passo', [ProdutosController::class, 'store'])->name('produtos.create');
+    Route::get('/{produto}/create/ingrediente', [ProdutosController::class, 'store'])->name('produtos.create');
 });
 
 

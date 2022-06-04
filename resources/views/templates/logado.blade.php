@@ -21,8 +21,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('receitas.index') }}">
-                            <img src="{{ asset('imagens/receitas.png') }}" class="iconeMenu">
+                        <a href="{{ route('produtos.index') }}">
+                            <img src="{{ asset('imagens/produto.png') }}" class="iconeMenu">
                             Produtos
                         </a>
                     </li>
