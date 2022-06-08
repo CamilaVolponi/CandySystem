@@ -18,3 +18,6 @@ https://coolors.co/3f3f46-e53471-ea5d8e-f0f2f5-f7f7f7
 
 ## 2.3. Logo:
 ![Logo do Candy System](/_FILES_OF_README/logo.png?raw=true "Logo do Candy System")
+
+# 3. Links de ajuda:
+## 3.1 [Install-docker-on-wsl](https://github.com/RubensJr21/install-docker-on-wsl "Install-docker-on-wsl") (Script para a instalação do Docker no WSL)
