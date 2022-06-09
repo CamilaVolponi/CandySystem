@@ -7,8 +7,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-        <!-- <script type="text/javascript" src="js/modaisProduto.js" defer></script> -->
-        <script type="text/javascript" src="js/modaisProduto.js" defer></script>
 	</head>
 	<body>
 		@yield('body')

@@ -542,6 +542,53 @@ tbody td{
     padding: 1%;
 }
 
+
+/*modal editar ingrediente*/
+.modalExcluirIngrediente{
+    color: black;
+    background: white;
+    width: 16%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*modal excluir ingrediente*/
+.modalEditarIngrediente{
+    color: black;
+    background: white;
+    width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*modal editar passo*/
+.modalExcluirPasso{
+    color: black;
+    background: white;
+    width: 12%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*modal excluir passo*/
+.modalEditarPasso{
+    color: black;
+    background: white;
+    width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
 /*modal inserir pedido*/
 .modalInserirPedido{
     color: black;

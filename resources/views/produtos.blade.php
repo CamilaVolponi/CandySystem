@@ -52,12 +52,6 @@
             <button class="botaoProdutos">Inserir Produto</button>
         </div>
     </main>
-
-    <footer class="footerTelas" >
-        <p class="copyright">&copy; Copyright Candy System</p>
-    </footer>
-    </div>
-
     <!-- modal inserir produto -->
     <div id="modal-inserir-produto" class="modal-container">
         <div class="modalInserirProduto">
@@ -109,8 +103,8 @@
                                 <div class="dropdown">
                                     <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
                                     <div class="dropdown-content">
-                                        <a href="#">Editar</a>
-                                        <a href="#">Excluir</a>
+                                        <a href="#" class="EditarIngrediente">Editar</a>
+                                        <a href="#" class="ExcluirIngrediente">Excluir</a>
                                     </div>
                                 </div>
                             </td>
@@ -123,8 +117,8 @@
                                 <div class="dropdown">
                                     <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
                                     <div class="dropdown-content">
-                                        <a href="#">Editar</a>
-                                        <a href="#">Excluir</a>
+                                        <a href="#" class="EditarIngrediente">Editar</a>
+                                        <a href="#" class="ExcluirIngrediente">Excluir</a>
                                     </div>
                                 </div>
                             </td>
@@ -160,8 +154,8 @@
                                     <div class="dropdown">
                                         <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
                                         <div class="dropdown-content">
-                                            <a href="#">Editar</a>
-                                            <a href="#">Excluir</a>
+                                            <a href="#" class="EditarPasso">Editar</a>
+                                            <a href="#" class="ExcluirPasso">Excluir</a>
                                         </div>
                                     </div>
                                 </td>
@@ -173,8 +167,8 @@
                                     <div class="dropdown">
                                         <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
                                         <div class="dropdown-content">
-                                            <a href="#">Editar</a>
-                                            <a href="#">Excluir</a>
+                                            <a href="#" class="EditarPasso">Editar</a>
+                                            <a href="#" class="ExcluirPasso">Excluir</a>
                                         </div>
                                     </div>
                                 </td>
@@ -186,8 +180,8 @@
                                     <div class="dropdown">
                                         <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
                                         <div class="dropdown-content">
-                                            <a href="#">Editar</a>
-                                            <a href="#">Excluir</a>
+                                            <a href="#" class="EditarPasso">Editar</a>
+                                            <a href="#" class="ExcluirPasso">Excluir</a>
                                         </div>
                                     </div>
                                 </td>
@@ -252,8 +246,8 @@
                                 <div class="dropdown">
                                     <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
                                     <div class="dropdown-content">
-                                        <a href="#">Editar</a>
-                                        <a href="#">Excluir</a>
+                                        <a href="#" class="EditarIngrediente">Editar</a>
+                                        <a href="#" class="ExcluirIngrediente">Excluir</a>
                                     </div>
                                 </div>
                             </td>
@@ -266,8 +260,8 @@
                                 <div class="dropdown">
                                     <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
                                     <div class="dropdown-content">
-                                        <a href="#">Editar</a>
-                                        <a href="#">Excluir</a>
+                                        <a href="#" class="EditarIngrediente">Editar</a>
+                                        <a href="#" class="ExcluirIngrediente">Excluir</a>
                                     </div>
                                 </div>
                             </td>
@@ -303,8 +297,8 @@
                                     <div class="dropdown">
                                         <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
                                         <div class="dropdown-content">
-                                            <a href="#">Editar</a>
-                                            <a href="#">Excluir</a>
+                                            <a href="#" class="EditarPasso">Editar</a>
+                                            <a href="#" class="ExcluirPasso">Excluir</a>
                                         </div>
                                     </div>
                                 </td>
@@ -316,8 +310,8 @@
                                     <div class="dropdown">
                                         <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
                                         <div class="dropdown-content">
-                                            <a href="#">Editar</a>
-                                            <a href="#">Excluir</a>
+                                            <a href="#" class="EditarPasso">Editar</a>
+                                            <a href="#" class="ExcluirPasso">Excluir</a>
                                         </div>
                                     </div>
                                 </td>
@@ -329,8 +323,8 @@
                                     <div class="dropdown">
                                         <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
                                         <div class="dropdown-content">
-                                            <a href="#">Editar</a>
-                                            <a href="#">Excluir</a>
+                                            <a href="#" class="EditarPasso">Editar</a>
+                                            <a href="#" class="ExcluirPasso">Excluir</a>
                                         </div>
                                     </div>
                                 </td>
@@ -375,4 +369,62 @@
             </div>
         </div>
     </div>
+
+    <!-- modal excluir ingrediente -->
+    <div id="modal-excluir-ingrediente" class="modal-container">
+        <div class="modalExcluirIngrediente">
+            <button class="fechar">X</button>
+            <h1>Confirma a exclusão deste ingrediente?</h1>
+            <p class="centralizar"><a href="#">Sim</a>|<a href="#">Não</a></p>
+        </div>
+    </div>
+
+    <!-- modal editar ingrediente -->
+    <div id="modal-editar-ingrediente" class="modal-container">
+        <div class="modalEditarIngrediente">
+            <button class="fechar">X</button>
+            <h1 class="tituloModal">Editar Ingrediente</h1>
+            <form>
+                <div>
+                    <label>Nome do ingrediente: <input type="text" name="nomeIngrediente" required></label>
+                </div>
+
+                <div>
+                    <label>Quantidade: <input type="text" name="quantidadeIngrediente" required></label>
+                </div>
+
+                <div>
+                    <label>Unidade de medida: <input type="text" name="unidadeMedidaIngrediente" required></label>
+                    <button class="cadastroIngrediente">Editar ingrediente</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- modal excluir passo -->
+    <div id="modal-excluir-passo" class="modal-container">
+        <div class="modalExcluirPasso">
+            <button class="fechar">X</button>
+            <h1>Confirma a exclusão deste passo?</h1>
+            <p class="centralizar"><a href="#">Sim</a>|<a href="#">Não</a></p>
+        </div>
+    </div>
+
+    <!-- modal editar passo -->
+    <div id="modal-editar-passo" class="modal-container">
+        <div class="modalEditarPasso">
+            <button class="fechar">X</button>
+            <h1 class="tituloModal">Editar Passo</h1>
+            <form>
+                <label>Passo: <textarea cols="125%" rows="5" id="passo"></textarea></label>
+                <button class="cadastroPreparo">Editar preparo</button>
+            </form>
+        </div>
+    </div>
+
+    <script src={{ asset('js/modaisProduto.js') }} ></script>
 @endsection
+
+
+
+

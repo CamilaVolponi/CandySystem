@@ -102,4 +102,5 @@
         </div>
     </div>
 
+    <script src={{ asset('js/modaisPedido.js') }} ></script>
 @endsection
