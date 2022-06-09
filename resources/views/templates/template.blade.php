@@ -6,7 +6,7 @@
 		<title>@yield('title', 'Candy System')</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-		<link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/reset.css') }}"> 
 	</head>
 	<body>
 		@yield('body')

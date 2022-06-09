@@ -81,7 +81,7 @@
     <div id="modal-editar-pedido" class="modal-container">
         <div class="modalEditarPedido">
             <button class="fechar">X</button>
-            <p class="tituloModal">Editar Pedido</p>
+            <p class="tituloModal">Editar Pedidos</p>
         </div>
     </div>
 

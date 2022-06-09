@@ -47,3 +47,4 @@ const arrayExcluirPasso = document.querySelectorAll('.ExcluirPasso');
 [...arrayExcluirPasso].forEach(element => {
     element.addEventListener('click', () => incialModal('modal-excluir-passo'));
 });
+

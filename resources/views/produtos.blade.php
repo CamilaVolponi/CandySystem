@@ -417,7 +417,7 @@
             <h1 class="tituloModal">Editar Passo</h1>
             <form>
                 <label>Passo: <textarea cols="125%" rows="5" id="passo"></textarea></label>
-                <button class="cadastroPreparo">Editar preparo</button>
+                <button class="cadastroPreparo">Editar passo</button>
             </form>
         </div>
     </div>
