@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class MeusDadosController extends Controller
 {
     public function index(Request $request){
-        return view('meus_dados');
+        return view('meusDadosProprietario');
     }
 
     public function endereco(){

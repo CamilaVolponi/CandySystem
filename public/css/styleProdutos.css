@@ -1,0 +1,181 @@
+.botaoProdutos{
+    margin-top: 2%;
+    margin-left: 84%;
+    width: 10%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.botaoProdutos:hover{
+    background-color: #EA5D8E;
+}
+
+/* mexe em todas as modais*/
+.tituloModal{
+    text-align: center;
+    color: #E53471;
+    font-size: 30px;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+
+.subtituloModal{
+    text-align: center;
+    color: #E53471;
+    font-size: 20px;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+
+.formModalInserirProduto label , .formModalEditarProduto label{
+    width: 20%;
+    margin-bottom: 10%;
+}
+
+.formModalInserirProduto input, .formModalEditarProduto label{
+    border-radius: 5px;
+    width: 30%;
+    height: 10px;
+    padding: 5px;
+}
+
+/*modal inserir produto*/
+.modalInserirProduto{
+    color: black;
+    background: white;
+    width: 50%;
+    padding: 10px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+.cadastroIngrediente, .cadastroPreparo, .cadastroProduto, .editarProdutoModal{
+    margin-top: 1%;
+    margin-left: 78%;
+    width: 20%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.tabelaInserirProduto{
+    width: 98%;
+    height: 10%;
+    border: solid 2px #3F3F46;
+    border-radius: 10px;
+    color: #3F3F46;
+    margin-top: 1%;
+}
+
+.cadastroIngrediente:hover{
+    background-color: #EA5D8E;
+}
+.cadastroPreparo:hover{
+    background-color: #EA5D8E;
+}
+.cadastroProduto:hover{
+    background-color: #EA5D8E;
+}
+
+/*editar produto*/
+.modalEditarProduto{
+    color: black;
+    background: white;
+    width: 50%;
+    padding: 10px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*excluir produto*/
+.modalExcluirProduto{
+    color: black;
+    background: white;
+    width: 12%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+.centralizar{
+    text-align: center;
+}
+
+/*visualizar produto*/
+.modalVisualizarProduto{
+    color: black;
+    background: white;
+    width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+.tituloVisualizar{
+    color: #E53471;
+    font-size: 20px;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+
+.visualizarInformacoes{
+    box-shadow: 0 0 0 1px black;
+    padding: 1%;
+}
+
+
+/*modal editar ingrediente*/
+.modalExcluirIngrediente{
+    color: black;
+    background: white;
+    width: 16%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*modal excluir ingrediente*/
+.modalEditarIngrediente{
+    color: black;
+    background: white;
+    width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*modal editar passo*/
+.modalExcluirPasso{
+    color: black;
+    background: white;
+    width: 12%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*modal excluir passo*/
+.modalEditarPasso{
+    color: black;
+    background: white;
+    width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}

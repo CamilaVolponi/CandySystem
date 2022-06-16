@@ -51,6 +51,7 @@
             <button class="botaoProdutos">Inserir Produto</button>
         </div>
     </main>
+
     <!-- modal inserir produto -->
     <div id="modal-inserir-produto" class="modal-container">
         <div class="modalInserirProduto">
@@ -69,16 +70,16 @@
                 <!--div de ingrediente-->
                 <div>
                     <form>
-                        <p class="tituloModal">Ingrediente</p>
+                        <p class="subtituloModal">Ingrediente</p>
 
                         <div>
                             <label>Nome do ingrediente: <input type="text" name="nomeIngrediente" required></label>
                         </div>
-
+                        <br>
                         <div>
                             <label>Quantidade: <input type="text" name="quantidadeIngrediente" required></label>
                         </div>
-
+                        <br>
                         <div>
                             <label>Unidade de medida: <input type="text" name="unidadeMedidaIngrediente" required></label>
                             <button class="cadastroIngrediente">Inserir ingrediente</button>
@@ -129,7 +130,7 @@
                 <!--div de preparo-->
                 <div>
                     <form>
-                        <p class="tituloModal">Modo de preparo</p>
+                        <p class="subtituloModal">Modo de preparo</p>
 
                         <div>
                             <label>Passo: <textarea cols="125" rows="5" id="passo"></textarea></label>
@@ -211,16 +212,16 @@
 
                 <!--div de ingrediente-->
                 <div>
-                    <p class="tituloModal">Ingrediente</p>
+                    <p class="subtituloModal">Ingrediente</p>
                     <form>
                         <div>
                             <label>Nome do ingrediente: <input type="text" name="nomeIngrediente" required></label>
                         </div>
-
+                        <br>
                         <div>
                             <label>Quantidade: <input type="text" name="quantidadeIngrediente" required></label>
                         </div>
-
+                        <br>
                         <div>
                             <label>Unidade de medida: <input type="text" name="unidadeMedidaIngrediente" required></label>
                             <button class="cadastroIngrediente">Inserir ingrediente</button>
@@ -271,7 +272,7 @@
 
                 <!--div de preparo-->
                 <div>
-                    <p class="tituloModal">Modo de preparo</p>
+                    <p class="subtituloModal">Modo de preparo</p>
                     <form>
                         <div>
                             <label>Passo: <textarea cols="125" rows="5" id="passo"></textarea></label>
@@ -342,7 +343,7 @@
     <div id="modal-excluir-produto" class="modal-container">
         <div class="modalExcluirProduto">
             <button class="fechar">X</button>
-            <h1>Confirma a exclusão deste produto?</h1>
+            <h1 class="centralizar">Confirma a exclusão deste produto?</h1>
             <p class="centralizar"><a href="#">Sim</a>|<a href="#">Não</a></p>
         </div>
     </div>
@@ -373,7 +374,7 @@
     <div id="modal-excluir-ingrediente" class="modal-container">
         <div class="modalExcluirIngrediente">
             <button class="fechar">X</button>
-            <h1>Confirma a exclusão deste ingrediente?</h1>
+            <h1 class="centralizar">Confirma a exclusão deste ingrediente?</h1>
             <p class="centralizar"><a href="#">Sim</a>|<a href="#">Não</a></p>
         </div>
     </div>
@@ -382,16 +383,16 @@
     <div id="modal-editar-ingrediente" class="modal-container">
         <div class="modalEditarIngrediente">
             <button class="fechar">X</button>
-            <h1 class="tituloModal">Editar Ingrediente</h1>
+            <h1 class="subtituloModal">Editar Ingrediente</h1>
             <form>
                 <div>
                     <label>Nome do ingrediente: <input type="text" name="nomeIngrediente" required></label>
                 </div>
-
+                <br>
                 <div>
                     <label>Quantidade: <input type="text" name="quantidadeIngrediente" required></label>
                 </div>
-
+                <br>
                 <div>
                     <label>Unidade de medida: <input type="text" name="unidadeMedidaIngrediente" required></label>
                     <button class="cadastroIngrediente">Editar ingrediente</button>
@@ -404,7 +405,7 @@
     <div id="modal-excluir-passo" class="modal-container">
         <div class="modalExcluirPasso">
             <button class="fechar">X</button>
-            <h1>Confirma a exclusão deste passo?</h1>
+            <h1 class="centralizar">Confirma a exclusão deste passo?</h1>
             <p class="centralizar"><a href="#">Sim</a>|<a href="#">Não</a></p>
         </div>
     </div>
@@ -413,7 +414,7 @@
     <div id="modal-editar-passo" class="modal-container">
         <div class="modalEditarPasso">
             <button class="fechar">X</button>
-            <h1 class="tituloModal">Editar Passo</h1>
+            <h1 class="subtituloModal">Editar Passo</h1>
             <form>
                 <label>Passo: <textarea cols="125%" rows="5" id="passo"></textarea></label>
                 <button class="cadastroPreparo">Editar passo</button>
@@ -422,6 +423,7 @@
     </div>
 
     <script src={{ asset('js/modaisProduto.js') }} ></script>
+    <link rel="stylesheet" href="{{ asset('css/styleProdutos.css') }}">
 @endsection
 
 

@@ -20,18 +20,18 @@
                     <input type="text" name="nomeConfeitaria" placeholder="Digite o nome de sua confeitaria" required>
                 </div>
 
-                <div class="informacoesCadastro">                   
+                <div class="informacoesCadastro">
                     <label>CNPJ</label>
                     <input type="text" name="cnpj" placeholder="Digite o CNPJ de sua empresa">
                 </div>
-            
+
                 <p>Informações pessoais</p>
                 <div class="informacoesCadastro">
                     <label>Nome</label>
                     <input type="text" name="nomeProprietario" placeholder="Digite seu nome" required>
                 </div>
 
-                <div class="informacoesCadastro">                 
+                <div class="informacoesCadastro">
                     <label>CPF</label>
                     <input type="text" name="cpf" placeholder="Digite seu CPF" required>
                 </div>
@@ -41,7 +41,7 @@
                     <input type="text" name="email" placeholder="Digite seu e-mail" required>
                 </div>
 
-                <div class="informacoesCadastro">                 
+                <div class="informacoesCadastro">
                     <label>Telefone</label>
                     <input type="text" name="Telefone" placeholder="Digite seu telefone" required>
                 </div>
@@ -51,7 +51,7 @@
                     <input type="password" name="senha" placeholder="Digite sua senha" required>
                 </div>
 
-                <div class="informacoesCadastro">                 
+                <div class="informacoesCadastro">
                     <label>Confirme sua senha</label>
                     <input type="password" name="confirmeSenha" placeholder="Confirme sua senha" required>
                 </div>
@@ -59,7 +59,7 @@
                 <button class="informacoesLogin">Cadastrar</button>
             </div>
 
-            
+
 
         </form>
     </main>
@@ -67,4 +67,6 @@
     <footer class="footerTelas">
         <p class="copyright">&copy; Copyright Candy System</p>
     </footer>
+
+    <link rel="stylesheet" href="{{ asset('css/styleCadastro.css') }}">
 @endsection

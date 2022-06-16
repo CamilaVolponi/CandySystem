@@ -19,7 +19,6 @@
                     <th>CPF</th>
                     <th>Telefone</th>
                     <th>Email</th>
-                    <th>Ações</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -29,15 +28,6 @@
                     <td>123.456.789-00</td>
                     <td>96865-5963</td>
                     <td>mariazinha.santos@gmail.com</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
-                            <div class="dropdown-content">
-                                <a href="#" class="editarFuncionario">Editar</a>
-                                <a href="#" class="excluirFuncionario">Excluir</a>
-                            </div>
-                        </div>
-                    </td>
                 </tr>
                 <tr>
                     <td>Paulo Soares</td>
@@ -45,23 +35,12 @@
                     <td>789.654.321-25</td>
                     <td>95862-5874</td>
                     <td>paulo.soares@gmail.com</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
-                            <div class="dropdown-content">
-                                <a href="#" class="editarFuncionario">Editar</a>
-                                <a href="#" class="excluirFuncionario">Excluir</a>
-                            </div>
-                        </div>
-                    </td>
                 </tr>
                 </tbody>
             </table>
         </div>
+    </main>
 
-        <div>
-            <button class="botaoInserirFuncionario">Inserir Funcionario</button>
-        </div>
-
-	</main>
+    <script src={{ asset('js/modaisMeusDados.js') }} ></script>
+    <link rel="stylesheet" href="{{ asset('css/styleMeusDadosFuncionario.css') }}">
 @endsection

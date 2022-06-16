@@ -32,3 +32,13 @@ const arrayVisualizarPedido = document.querySelectorAll('.visualizarPedido');
 [...arrayVisualizarPedido].forEach(element => {
     element.addEventListener('click', () => incialModal('modal-visualizar-pedido'));
 });
+
+const arrayExcluirProdutoPedido = document.querySelectorAll('.ExcluirProdutoPedido');
+[...arrayExcluirProdutoPedido].forEach(element => {
+    element.addEventListener('click', () => incialModal('modal-excluir-produto-pedido'));
+});
+
+const arrayEditarProdutoPedido = document.querySelectorAll('.EditarProdutoPedido');
+[...arrayEditarProdutoPedido].forEach(element => {
+    element.addEventListener('click', () => incialModal('modal-editar-produto-pedido'));
+});

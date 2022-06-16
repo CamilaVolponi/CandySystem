@@ -1,0 +1,196 @@
+.botaoPedidos{
+    margin-top: 2%;
+    margin-left: 84%;
+    width: 10%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.botaoPedidos:hover{
+    background-color: #EA5D8E;
+}
+
+/* mexe em todas as modais*/
+.tituloModal{
+    text-align: center;
+    color: #E53471;
+    font-size: 30px;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+
+.subtituloModal{
+    text-align: center;
+    color: #E53471;
+    font-size: 20px;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+
+.formModalInserirPedido label, .formModalEditarPedido label{
+    width: 20%;
+    margin-bottom: 10%;
+}
+
+.formModalInserirPedido input, .formModalEditarPedido input{
+    border-radius: 5px;
+    width: 30%;
+    height: 10px;
+    padding: 5px;
+}
+
+/*modal inserir pedido*/
+.modalInserirPedido{
+    color: black;
+    background: white;
+    width: 70%;
+    padding: 10px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+.tabelaInserirPedido{
+    width: 98%;
+    height: 10%;
+    border: solid 2px #3F3F46;
+    border-radius: 10px;
+    color: #3F3F46;
+    margin-top: 1%;
+}
+
+.cadastroPedido, .inserirProdutoEmPedido, .editarPedidoBotao, .editarProdutoEmPedido{
+    margin-top: 1%;
+    margin-left: 78%;
+    width: 20%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.inserirProdutoPedido{
+    margin-top: 1%;
+    margin-left: 40%;
+    width: 20%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.cadastroPedido:hover{
+    background-color: #EA5D8E;
+}
+.inserirProdutoPedido:hover{
+    background-color: #EA5D8E;
+}
+.inserirProdutoEmPedido:hover{
+    background-color: #EA5D8E;
+}
+
+/*inserir produto em pedido*/
+.modalInserirProdutoPedido{
+    color: black;
+    background: white;
+    width: 30%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+ .imgBuscarClientes{
+     width: 20px;
+ }
+
+ .buscarClientes{
+     margin-left: 78%;
+     width: 20%;
+     background-color: #E53471;
+     border-radius: 30px;
+     padding: 5px;
+     color: white;
+     border: 1px;
+ }
+
+.buscarClientes:hover{
+    background-color: #EA5D8E;
+}
+
+/*editar pedido*/
+.modalEditarPedido{
+    color: black;
+    background: white;
+    width: 70%;
+    padding: 10px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*excluir pedido*/
+.modalExcluirPedido{
+    color: black;
+    background: white;
+    width: 12%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*visualizar pedido */
+.modalVisualizarPedido{
+    color: black;
+    background: white;
+    width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+.tituloVisualizar{
+    color: #E53471;
+    font-size: 20px;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+
+.visualizarInformacoes{
+    box-shadow: 0 0 0 1px black;
+    padding: 1%;
+}
+
+/*excluir produto no pedido*/
+.modalExcluirProdutoPedido{
+    color: black;
+    background: white;
+    width: 17%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+.centralizar{
+    text-align: center;
+}
+
+/*excluir produto no pedido*/
+.modalEditarProdutoPedido{
+    color: black;
+    background: white;
+    width: 17%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}

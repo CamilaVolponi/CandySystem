@@ -2,7 +2,7 @@
 
 @section('title', 'Home - Candy System')
 
-@section('content')		
+@section('content')
 	<main>
 		<div class="containerNotificacoes">
 			<div class="notificacoesPedidos">
@@ -24,15 +24,17 @@
 					<img src="{{ asset('imagens/calendario.png') }}">
 				</div>
 			</div>
-			
+
 			<div class="notificacoes">
 				<div class="titleNotificacao">
 					Notificação (escolhendo)
 				</div>
 				<div>
-					
+
 				</div>
 			</div>
 		</div>
 	</main>
+
+    <link rel="stylesheet" href="{{ asset('css/styleMain.css') }}">
 @endsection

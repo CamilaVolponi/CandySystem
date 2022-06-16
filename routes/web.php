@@ -34,8 +34,7 @@ Route::prefix("/admin")->group(function (){
 });
 
 Route::prefix("meus-dados")->group(function(){
-    Route::get('/', [MeusDadosController::class, 'index'])->name('meus-dados.index');
-    Route::get('/endereco', [MeusDadosController::class, 'endereco'])->name('meus-dados.endereco');
+    Route::get('/', [MeusDadosController::class, 'index'])->name('meusDadosProprietario.index');
 });
 
 Route::get('/pedidos', [PedidosController::class, 'index'])->name('pedidos.index');
