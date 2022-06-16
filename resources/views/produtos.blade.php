@@ -11,10 +11,10 @@
 
         <table class="tabela">
             <thead>
-            <tr>
-                <th>Nome produto</th>
-                <th>Ações</th>
-            </tr>
+                <tr>
+                    <th>Nome produto</th>
+                    <th>Ações</th>
+                </tr>
             </thead>
             <tbody>
             <tr>
@@ -42,7 +42,6 @@
                             <a href="#" class="visualizarProduto">Visualizar</a>
                         </div>
                     </div>
-
                 </td>
             </tr>
             </tbody>
@@ -87,12 +86,12 @@
                     </form>
                     <table class="tabelaInserirProduto">
                         <thead>
-                        <tr>
-                            <th>Nome ingrediente</th>
-                            <th>Quantidade</th>
-                            <th>Unidade de medida</th>
-                            <th>Ações</th>
-                        </tr>
+                            <tr>
+                                <th>Nome ingrediente</th>
+                                <th>Quantidade</th>
+                                <th>Unidade de medida</th>
+                                <th>Ações</th>
+                            </tr>
                         </thead>
                         <tbody>
                         <tr>
@@ -140,11 +139,11 @@
                     <div>
                         <table class="tabelaInserirProduto">
                             <thead>
-                            <tr>
-                                <th>Ordem</th>
-                                <th>Passo</th>
-                                <th>Ações</th>
-                            </tr>
+                                <tr>
+                                    <th>Ordem</th>
+                                    <th>Passo</th>
+                                    <th>Ações</th>
+                                </tr>
                             </thead>
                             <tbody>
                             <tr>
@@ -230,12 +229,12 @@
 
                     <table class="tabelaInserirProduto">
                         <thead>
-                        <tr>
-                            <th>Nome ingrediente</th>
-                            <th>Quantidade</th>
-                            <th>Unidade de medida</th>
-                            <th>Ações</th>
-                        </tr>
+                            <tr>
+                                <th>Nome ingrediente</th>
+                                <th>Quantidade</th>
+                                <th>Unidade de medida</th>
+                                <th>Ações</th>
+                            </tr>
                         </thead>
                         <tbody>
                         <tr>
@@ -283,11 +282,11 @@
                     <div>
                         <table class="tabelaInserirProduto">
                             <thead>
-                            <tr>
-                                <th>Ordem</th>
-                                <th>Passo</th>
-                                <th>Ações</th>
-                            </tr>
+                                <tr>
+                                    <th>Ordem</th>
+                                    <th>Passo</th>
+                                    <th>Ações</th>
+                                </tr>
                             </thead>
                             <tbody>
                             <tr>

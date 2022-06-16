@@ -7,11 +7,16 @@ function incialModal(modalID){
                 modal.classList.remove('mostrar');
             }
         });
-    }  
+    }
 }
 
 const botaoPedidos = document.querySelector('.botaoPedidos');
 botaoPedidos.addEventListener('click', () => incialModal('modal-inserir-pedido'));
+
+const arrayInserirProdutoPedido = document.querySelectorAll('.inserirProdutoPedido');
+[...arrayInserirProdutoPedido].forEach(element => {
+    element.addEventListener('click', () => incialModal('modal-inserir-produto-pedido'));
+});
 
 const arrayEditarPedido = document.querySelectorAll('.editarPedido');
 [...arrayEditarPedido].forEach(element => {

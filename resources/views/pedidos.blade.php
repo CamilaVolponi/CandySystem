@@ -11,16 +11,16 @@
 
         <table class="tabela">
             <thead>
-            <tr>
-                <th>Cliente</th>
-                <th>Endereço</th>
-                <th>Data da entrega</th>
-                <th>Hora da entrega</th>
-                <th>Valor total</th>
-                <th>Forma de pagamento</th>
-                <th>Status</th>
-                <th>Ações</th>
-            </tr>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Endereço</th>
+                    <th>Data da entrega</th>
+                    <th>Hora da entrega</th>
+                    <th>Valor total</th>
+                    <th>Forma de pagamento</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
             </thead>
             <tbody>
             <tr>
@@ -49,7 +49,7 @@
                 <td>19:00</td>
                 <td>100</td>
                 <td>Em preparo</td>
-                <td>Cartão de crédito</td>
+                <td>Crédito</td>
                 <td>
                     <div class="dropdown">
                         <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
@@ -73,7 +73,97 @@
     <div id="modal-inserir-pedido" class="modal-container">
         <div class="modalInserirPedido">
             <button class="fechar">X</button>
+
             <p class="tituloModal">Inserir Pedido</p>
+
+            <form class="formModalInserirFuncionario">
+                <!--div de dados do cliente-->
+                <div>
+                    <p class="tituloModal">Informações do cliente</p>
+                    <div>
+                        <label>Nome: <input type="text" name="nomeCliente" required></label>
+
+                        <label>Telefone: <input type="text" name="telefoneCliente" required></label>
+                    </div>
+                    <div>
+                        <label>Endereço: <input type="text" name="enderecoCliente" required></label>
+                    </div>
+                </div>
+
+                <!--div de dados do Pedido-->
+                <div>
+                    <p class="tituloModal">Informações do Pedido</p>
+
+                    <label>Para o dia: <input type="date" name="data" required></label>
+
+                    <label>Para o horário: <input type="text" name="horario" required></label>
+
+                    <legend>Forma de pagamento:
+                    <select>
+                        <option>Crédito</option>
+                        <option>Dinheiro</option>
+                        <option>PIX</option>
+                    </select></legend>
+                </div>
+
+
+                <!--div de produtos-->
+                <div>
+                    <p class="tituloModal">Produtos</p>
+
+                    <button class="inserirProdutoPedido">Inserir produto</button>
+
+                    <table class="tabelaInserirProduto">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Quantidade</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Pão</td>
+                            <td>2</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
+                                    <div class="dropdown-content">
+                                        <a href="#" class="EditarPasso">Editar</a>
+                                        <a href="#" class="ExcluirPasso">Excluir</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <button class="cadastroPedido">Cadastrar pedido</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- modal inserir produto -->
+    <div id="modal-inserir-produto-pedido" class="modal-container">
+        <div class="modalInserirProdutoPedido">
+            <button class="fechar">X</button>
+            <p class="tituloModal">Adicionar Produto</p>
+
+            <div>
+                <legend>Produto:
+                <select>
+                    <option>Crédito</option>
+                    <option>Dinheiro</option>
+                    <option>PIX</option>
+                </select></legend>
+            </div>
+
+            <div>
+                <label>Quantidade: <input type="number" name="quantidade" min="1" required></label>
+            </div>
+
+            <button class="InserirProdutoEmPedido">Cadastrar pedido</button>
         </div>
     </div>
 
