@@ -40,7 +40,6 @@ jobs:
           port: ${{ secrets.SSH_REMOTE_PORT }}
           script: |
             cd ${{ secrets.SSH_REMOTE_TARGET_MAIN }}
-            echo "$PWD"
             composer install --no-dev -o
             php artisan config:cache
             php artisan route:cache
