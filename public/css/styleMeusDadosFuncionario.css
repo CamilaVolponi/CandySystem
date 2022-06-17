@@ -4,3 +4,10 @@
     border: 3px solid #E53471;
     padding: 10px;
 }
+
+.tituloVisualizar{
+    color: #E53471;
+    font-size: 20px;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
