@@ -11,8 +11,19 @@ class MeusDadosController extends Controller
         return view('meus_dados');
     }
 
-    public function endereco(){
-        $cliente = Cliente::all()->first();
+    public function endereco(Request $request){
+//        $cliente = Cliente::all()->first();
+        $id = $request->toArray()["id"];
+        $cliente = new Cliente();
+
+        $data = [
+            "numero" => 59,
+            "complemento" => "Bloco B"
+        ];
+
+//        $cliente->updateDataFromCliente($id, $data);
+
+        dd($data);
 
         return view('meus_dados', [
             "endereco" => $cliente->endereco()->first()->toArray()

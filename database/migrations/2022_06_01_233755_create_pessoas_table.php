@@ -15,11 +15,17 @@ return new class extends Migration
     {
         Schema::create('pessoas', function (Blueprint $table) {
             $table->id();
-            $table->string("cpf")->unique();
+            $table->text("cpf")->unique();
             $table->string("nome");
             $table->string("telefone");
-            $table->string("email");
+            $table->text("email")->unique();
             $table->string("senha");
+            $table->string("cargo");
+            $table->foreignId("empresa_id")
+                ->constrained("empresas")
+                ->references("id")
+                ->onDelete("CASCADE")
+                ->onUpdate("CASCADE");
             $table->timestamps();
         });
     }

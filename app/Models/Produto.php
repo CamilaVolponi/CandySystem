@@ -25,4 +25,9 @@ class Produto extends Model
     public function ingredientes(){
         return $this->hasMany(Ingrediente::class, "produto_id", "id");
     }
+
+    public function pedidos(){
+        // belongsToMany(<Model com quem se relaciona>,<tabela intermediária>, <atributo que se relaciona com o model Produto>, <atributo que se relaciona com o model Pedido>)
+        return $this->belongsToMany(Pedido::class,"produto_pedido", "produto_id", "pedido_id");
+    }
 }

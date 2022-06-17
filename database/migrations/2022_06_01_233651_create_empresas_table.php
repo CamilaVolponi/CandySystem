@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string("cnpj")->unique();
             $table->string("nome");
-            $table->string("senha");
             $table->timestamps();
         });
     }

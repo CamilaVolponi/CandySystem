@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Pessoa;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PessoaSeeder extends Seeder
+class PedidoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +14,6 @@ class PessoaSeeder extends Seeder
      */
     public function run()
     {
-        Pessoa::factory(5)->create();
+        //
     }
 }

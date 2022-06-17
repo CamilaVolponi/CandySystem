@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\TipoCargo;
 use App\Enums\TipoUnidadeDeMedida;
 use App\Models\Ingrediente;
 use App\Models\ModoDePreparo;
@@ -20,6 +21,9 @@ class ProdutoSeeder extends Seeder
      */
     public function run()
     {
+        $cases = TipoCargo::cases();
+        $sizeCases = count($cases);
+
         Produto::factory(5)
             ->create()
             ->each(function ($produto){

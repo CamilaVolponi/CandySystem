@@ -12,6 +12,6 @@ class Empresa extends Model
     protected $table = "empresas";
 
     protected $fillable = [
-        "cnpj" , "nome", "senha"
+        "cnpj" , "nome"
     ];
 }

@@ -21,8 +21,7 @@ class EmpresaFactory extends Factory
         $fakerU = $this->faker->unique(true);
         return [
             "cnpj" => $fakerU->cnpj(),
-            "nome" => $fakerU->company(),
-            "senha" => $fakerU->password
+            "nome" => $fakerU->company()
         ];
     }
 }
