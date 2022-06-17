@@ -1,307 +1,224 @@
-/*utilizado em todas as telas*/
+/*utilizado em todas as telas - inicio*/
 
 body{
-	background-color: #F0F2F5;
-	font-family: sans-serif;
-	color: white;
+    background-color: #F0F2F5;
+    font-family: sans-serif;
 }
 
 .copyright{
-	text-align: center;
-	color: black;
-	margin-top: 1%;
+    text-align: center;
+    color: black;
+    margin-top: 1%;
 }
 
-/*tela login*/
-
-.logoLogin {
-	width: 250px;
-	margin: auto;
-	display: block;
-}
-
-.formLogin{
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.cardLogin{
-	box-shadow: 1px 1px 3px 1px black;
-	background-color: #3F3F46;
-	padding: 20px;
-	border-radius: 5px;
-}
-
-.cardLogin h1{
-	text-align: center;
-	text-transform: uppercase;
-	padding-top: 10px;
-	font-weight: bold;
-	font-size: 22px;
-}
-
-.informacoesLogin{
-	margin-bottom: 10px;
-}
-
-.informacoesLogin label{
-	width: 100%;
-	display: block;
-}
-
-.informacoesLogin input{
-	border-radius: 5px;
-    width: -webkit-fill-available;
-    height: 25px;
-    outline: 0;
-    padding: 5px;
-}
-
-.cardLogin button{
-	text-transform: uppercase;
-	background-color: #E53471;
-	width: 100%;
-	border-radius: 30px;
-	padding: 15px;
-	color: white;
-	border: 1px;
-}
-
-.cardLogin button:hover{
-	background-color: #EA5D8E;
-}
-
-.cardLogin a{
-	display: block;
-	text-align: center;
-	color: white;
-}
-
-.cardLogin a:hover{
-	color: #EA5D8E;
-}
-
-/*tela cadastro*/
-
-.logoCadastro{
-	width: 200px;
-	display: absolute;
-	padding: 15px;
-}
-
-.titulo{
-	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 22px;
-	position: absolute;
-	top: 5%;
-	right: 45%;
-	color: #3F3F46;
-}
-
-.formCadastro{
-	width: 50%;
-	margin: 2% 25%;
-}
-
-.cardCadastro{
-	box-shadow: 0px 0px 3px 1px black;
-	background-color: #3F3F46;
-	width: 100%;
-	border-radius: 10px;
-	margin-top: 10px;
-	padding: 2%;
-}
-
-.informacoesCadastro{
-	margin-bottom: 10px;
-	padding: 5px;
-}
-
-.informacoesCadastro label{
-	display: block;
-	font-size: 15px;
-}
-
-.informacoesCadastro input{
-	border-radius: 10px;
-	width: 98%;
-	height: 25px;
-	outline: 0;
-	padding: 5px;
-}
-
-.formCadastro p{
-	padding-top: 5px;
-	text-align: center;
-	font-size: 20px;
-}
-
-.formCadastro button{
-	text-transform: uppercase;
-	margin-left: 40%;
-	background-color: #E53471;
-	width: 20%;
-	border-radius: 30px;
-	padding: 15px;
-	color: white;
-	border: 1px;
-}
-
-.formCadastro button:hover{
-	background-color: #EA5D8E;
-}
-
-.footerTelas{
-	padding:  5px 0;
-}
-
+/*utilizado em todas as telas - fim*/
 
 /*possui em todas as telas - inicio*/
 .logo{
-	width: 150px;
-	margin:auto;
-	display: block;
-	padding: 5%;
+    width: 150px;
+    margin:auto;
+    display: block;
+    padding: 5%;
 }
 
 .iconeInformacaoUsuario{
-	width: 20px;
-	padding: 0px 10px;
+    width: 20px;
+    padding: 0px 10px;
 }
 
 .iconeMenu{
-	width: 25px;
-	padding: 0px 10px;
+    width: 25px;
+    padding: 0px 10px;
 }
 
 .container{
-	display: grid;
-	grid-template-columns: 1fr 5fr;
-	grid-template-rows: 10vh 80vh 10vh;
-	grid-template-areas: "aside main"
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-areas: "aside main"
 						"aside main"
-						"footer footer"
+						"aside footer"
 }
 
 main{
-	grid-area: main;
+    grid-area: main;
 }
 
 aside{
-	grid-area: aside;
+    grid-area: aside;
 }
 
 footer{
-	grid-area: footer;
+    grid-area: footer;
 }
 
 .principal{
-	background-color: #E53471;
+    background-color: #E53471;
 }
 
 .informacaoUsuario{
-	font-weight: bold;
-	font-size: 22px;
-	color: white;
-	text-align: center;
-	padding: 20px;
+    font-weight: bold;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-li a{
-	text-decoration: none;
-	color: white;
-	font-size: 20px;
-	transition: all .2s linear;
-	display: block;	
-	padding: 25px 5px;
+.menu li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: all .2s linear;
+    display: block;
+    padding: 25px 5px;
 }
 
-li a:hover{
-	background-color: #E53471;
+.menu li a:hover{
+    background-color: #E53471;
 }
 
 .menu{
-	position: absolute;
-	background-color: #3F3F46;
-	width: 15%;
-	height: 90%;
-	border-radius: 15px;
-	margin: 10px;
+    position: absolute;
+    background-color: #3F3F46;
+    width: 15%;
+    height: 90%;
+    border-radius: 15px;
+    margin: 10px;
 }
 /*possui em todas as telas - fim*/
 
-/*tela principal*/
-.containerNotificacoes{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 50vh 50vh;
-	grid-template-areas: "notificacoesPedidos calendario"
-						"notificacoesPedidos notificacoes"
+
+/*busca - inicio*/
+.search-container{
+    padding-top: 3%;
+    width: 490px;
+    display: block;
+
 }
 
-.titleNotificacao{
-	padding: 15px;
-	text-align: center;
-	background-color: #E53471;
-	border-radius: 10px 10px 0 0;
-	color: white;
+input::placeholder {
+    color: white;
 }
 
-.notificacoesPedidos{
-	box-shadow: 0px 1px 3px 1px black;
-	background-color: #F7F7F7;
-	height: 90%;
-	border-radius: 10px;
-	color: black;
-	font-size: 20px;
-	margin: 10px;
-	grid-area: notificacoesPedidos;
+input#search-bar{
+    background-color: #E53471;
+    color: white;
+    margin: 0 auto;
+    width: 100%;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1rem;
+    border: 1px solid #3F3F46;
+    outline: none;
+    border-radius: 10px;
 }
 
-.calendario{
-	box-shadow: 0px 1px 3px 1px black;
-	background-color: #F7F7F7;
-	height: 85%;
-	border-radius: 10px;
-	color: black;
-	font-size: 20px;
-	margin: 10px;
-	grid-area: calendario;
+.search-icon{
+    position: relative;
+    float: right;
+    width: 40px;
+    height: 40px;
+    top: -45px;
+    right: -35px;
+    background-color: #E53471;
+}
+/*busca - fim*/
+
+/*tabelas - incio*/
+
+.tabela {
+    width: 95%;
+    height: 10%;
+    border: solid 2px #3F3F46;
+    border-radius: 10px;
+    color: #3F3F46;
+    margin-top: 5%;
 }
 
-.notificacoes{
-	box-shadow: 0px 1px 3px 1px black;
-	background-color: #F7F7F7;
-	height: 80%;
-	border-radius: 10px;
-	color: black;
-	font-size: 20px;
-	margin: 10px;
-	grid-area: notificacoes;
+thead th{
+    color: #F0F2F5;
+    font-weight: bold;
+    background-color: #3F3F46;
+    padding: 1%;
+    text-align: left;
 }
 
-.calendario img{
-	width:60%;
-	display: block;
-    margin-left: auto;
-    margin-right: auto
+tbody td{
+    padding-bottom: 1%;
+    padding-left: 1%;
+    border: solid 2px #3F3F46;
 }
 
-.notificacoesPedidos p{
-	text-decoration: none;
-	font-size: 20px;	
-	padding: 10px;
+.imgAcoes{
+    width: 30px;
+}
+/*tabelas - fim*/
+
+/*dropdown - inicio*/
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
 }
 
-/*media*/
-
-@media only screen and (min-width:600px){
-	.cardLogin{
-		width: 400px;
-	}
+.dropbtn{
+    border: none;
+    background-color: transparent;
 }
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #E53471
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*dropdown - fim*/
+
+/*modais no geral - inicio*/
+.modal-container{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.mostrar{
+    display: flex;
+}
+
+.mostrar .modal{
+    animation: modal 1s;
+}
+
+.fechar{
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid white;
+    background-color: #E53471;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .3);
+}
+
+/*modais no geral - fim*/

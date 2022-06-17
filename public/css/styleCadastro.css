@@ -1,0 +1,74 @@
+.logoCadastro{
+    width: 200px;
+    display: absolute;
+    padding: 15px;
+}
+
+.titulo{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 22px;
+    position: absolute;
+    top: 5%;
+    right: 45%;
+    color: #3F3F46;
+}
+
+.formCadastro{
+    width: 50%;
+    margin: 2% 25%;
+}
+
+.cardCadastro{
+    box-shadow: 0px 0px 3px 1px black;
+    background-color: #3F3F46;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 2%;
+}
+
+.informacoesCadastro{
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.informacoesCadastro label{
+    display: block;
+    font-size: 15px;
+    color: white;
+}
+
+.informacoesCadastro input{
+    border-radius: 10px;
+    width: 98%;
+    height: 25px;
+    outline: 0;
+    padding: 5px;
+}
+
+.formCadastro p{
+    padding-top: 5px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+.formCadastro button{
+    text-transform: uppercase;
+    margin-left: 40%;
+    background-color: #E53471;
+    width: 20%;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.formCadastro button:hover{
+    background-color: #EA5D8E;
+}
+
+.footerTelas{
+    padding:  5px 0;
+}

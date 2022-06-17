@@ -15,12 +15,12 @@
                 <label>Usuário</label>
                 <input type="text" name="cpf" placeholder="Digite seu CPF" required value="{{old('cpf')}}">
             </div>
-            
+
             <div class="informacoesLogin">
                 <label>Senha</label>
-                <input type="password" name="senha" placeholder="Digite sua senha" required value="{{old('senha')}}"> 
+                <input type="password" name="senha" placeholder="Digite sua senha" required value="{{old('senha')}}">
             </div>
-            
+
             @if ($errors->all())
                 <p style="color:red;text-align: center;margin-bottom: 0.5em;">cpf ou senha inválidos</p>
             @endif
@@ -30,4 +30,6 @@
         </div>
         <p class="copyright">&copy; Copyright Candy System</p>
     </form>
+
+    <link rel="stylesheet" href="{{ asset('css/styleLogin.css') }}">
 @endsection
