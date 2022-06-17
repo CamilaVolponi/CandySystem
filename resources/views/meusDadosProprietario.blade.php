@@ -5,7 +5,7 @@
 @section('content')
 	<main>
         <div class="dadosEmpresa">
-            <p>Dados da empresa:</p>
+            <p class="tituloVisualizar">Dados da empresa:</p>
 
             <p>Nome da empresa: ~NOME~ </p>
             <p>CNPJ: ~CNPJ~ </p>

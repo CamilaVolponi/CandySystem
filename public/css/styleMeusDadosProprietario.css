@@ -5,6 +5,13 @@
     padding: 10px;
 }
 
+.tituloVisualizar{
+    color: #E53471;
+    font-size: 20px;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
 .inserirFuncionario{
     margin-top: 2%;
     margin-left: 84%;
