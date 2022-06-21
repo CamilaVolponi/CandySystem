@@ -42,6 +42,9 @@ body{
 
 main{
     grid-area: main;
+    /*Código em que faz apenas o conteúdo ficar rolavel, somente na main*/
+    overflow: auto;
+    height: 100%;
 }
 
 aside{
