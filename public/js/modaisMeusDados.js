@@ -23,8 +23,3 @@ const arrayEditarFuncionario = document.querySelectorAll('.editarFuncionario');
     element.addEventListener('click', () => incialModal('modal-editar-funcionario'));
 });
 
-const arrayAdicionarCargo = document.querySelectorAll('.adicionarCargo');
-[...arrayAdicionarCargo].forEach(element => {
-    element.addEventListener('click', () => incialModal('modal-adicionar-cargo-funcionario'));
-});
-

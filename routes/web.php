@@ -37,14 +37,17 @@ Route::prefix("meus-dados")->group(function(){
     Route::get('/', [MeusDadosController::class, 'index'])->name('meusDadosProprietario.index');
 });
 
-Route::get('/pedidos', [PedidosController::class, 'index'])->name('pedidos.index');
-
+Route::prefix("pedidos")->group(function(){
+    Route::get('/', [PedidosController::class, 'index'])->name('pedidos.index');
+    Route::get('/create', [PedidosController::class, 'create'])->name('pedidos.create');
+    Route::get('/edit/{id}', [PedidosController::class, 'edit'])->name('pedidos.edit');
+    Route::get('/show', [PedidosController::class, 'show'])->name('pedidos.show');
+});
 
 Route::prefix("/produtos")->group(function () {
     Route::get('/', [ProdutosController::class, 'index'])->name('produtos.index');
-    Route::get('/{produto}/create/passo', [ProdutosController::class, 'store'])->name('produtos.create');
-    Route::get('/{produto}/create/ingrediente', [ProdutosController::class, 'store'])->name('produtos.create');
+    Route::get('/create', [ProdutosController::class, 'create'])->name('produtos.create');
+    Route::get('/show', [ProdutosController::class, 'show'])->name('produtos.show');
 });
-
 
 Route::get('/relatorios', [RelatoriosController::class, 'index'])->name('relatorios.index');

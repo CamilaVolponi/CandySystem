@@ -3,9 +3,9 @@
 namespace App\Enums;
 
 enum TipoFormaDePagamento : string {
-    case PIX = "pix";
-    case DINHEIRO = "dinheiro";
-    case DEBITO = "débito";
-    case CREDITO = "crédito";
-    case PICPAY = "picpay";
+    case PIX = "PIX";
+    case DINHEIRO = "Dinheiro";
+    case DEBITO = "Débito";
+    case CREDITO = "Crédito";
+    case PICPAY = "PicPay";
 }

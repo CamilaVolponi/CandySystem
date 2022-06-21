@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('pessoas', function (Blueprint $table) {
             $table->id();
-            $table->text("cpf")->unique();
+            $table->string("cpf")->unique();
             $table->string("nome");
             $table->string("telefone");
-            $table->text("email")->unique();
+            $table->string("email")->unique();
             $table->string("senha");
             $table->string("cargo");
             $table->foreignId("empresa_id")

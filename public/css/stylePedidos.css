@@ -13,23 +13,6 @@
     background-color: #EA5D8E;
 }
 
-/* mexe em todas as modais*/
-.tituloModal{
-    text-align: center;
-    color: #E53471;
-    font-size: 30px;
-    margin-bottom: 1%;
-    margin-top: 2%;
-}
-
-.subtituloModal{
-    text-align: center;
-    color: #E53471;
-    font-size: 20px;
-    margin-bottom: 1%;
-    margin-top: 2%;
-}
-
 .formModalInserirPedido label, .formModalEditarPedido label{
     width: 20%;
     margin-bottom: 10%;
@@ -93,31 +76,6 @@
 .inserirProdutoEmPedido:hover{
     background-color: #EA5D8E;
 }
-
-/*inserir produto em pedido*/
-.modalInserirProdutoPedido{
-    color: black;
-    background: white;
-    width: 30%;
-    padding: 30px;
-    border: 10px solid #E53471;
-    box-shadow: 0 0 0 10px white;
-    position: relative;
-}
-
- .imgBuscarClientes{
-     width: 20px;
- }
-
- .buscarClientes{
-     margin-left: 78%;
-     width: 20%;
-     background-color: #E53471;
-     border-radius: 30px;
-     padding: 5px;
-     color: white;
-     border: 1px;
- }
 
 .buscarClientes:hover{
     background-color: #EA5D8E;

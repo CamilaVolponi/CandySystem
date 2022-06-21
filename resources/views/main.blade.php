@@ -4,35 +4,87 @@
 
 @section('content')
 	<main>
-		<div class="containerNotificacoes">
-			<div class="notificacoesPedidos">
-				<div class="titleNotificacao">
-					<h2>Notificações Pedidos</h2>
-				</div>
-				<div>
-					<p>- Você possui um pedido do produto: Bolo para sábado, dia 23/04/2021.</p>
-					<p>- Você possui um pedido do produto: 1 Cento de brigadeiros para domingo, dia 24/04/2021.</p>
-					<p>- Você possui um pedido do produto: Bolo para domingo, dia 24/04/2021.</p>
-				</div>
-			</div>
+        <script>
+            function add(){
+                let main = document.getElementById("main");
+                let firstChild = main.children[0].cloneNode(true);
+                main.append(firstChild);
+            }
+        </script>
+        <button onclick="add()">Add</button>
+		<div id="main">
+            <div class="notificacoesPedidos">
+                <div class="titleNotificacao">
+                    <h2>Pedido do/a Mario</h2>
+                </div>
+                <p>Produtos: Bolo de chocolate</p>
+                <p>Dia da entrega: 23/04/2021</p>
+                <p>Hora da entrega: 10:00</p>
+            </div>
+            <div class="notificacoesPedidos">
+                <div class="titleNotificacao">
+                    <h2>Pedido do/a Maria</h2>
+                </div>
+                <p>Produtos: Cento de brigadeiro</p>
+                <p>Dia da entrega: 23/04/2021</p>
+                <p>Hora da entrega: 10:00</p>
+            </div>
+            <div class="notificacoesPedidos">
+                <div class="titleNotificacao">
+                    <h2>Pedido do/a cliente</h2>
+                </div>
+                <p>Produtos: Cento de beijinho</p>
+                <p>Dia da entrega: 23/04/2021</p>
+                <p>Hora da entrega: 10:00</p>
+            </div>
+            <div class="notificacoesPedidos">
+                <div class="titleNotificacao">
+                    <h2>Pedido do/a cliente</h2>
+                </div>
+                <p>Produtos: Cento de beijinho</p>
+                <p>Dia da entrega: 23/04/2021</p>
+                <p>Hora da entrega: 10:00</p>
+            </div>
+            <div class="notificacoesPedidos">
+                <div class="titleNotificacao">
+                    <h2>Pedido do/a cliente</h2>
+                </div>
+                <p>Produtos: Cento de beijinho</p>
+                <p>Dia da entrega: 23/04/2021</p>
+                <p>Hora da entrega: 10:00</p>
+            </div>
+            <div class="notificacoesPedidos">
+                <div class="titleNotificacao">
+                    <h2>Pedido do/a cliente</h2>
+                </div>
+                <p>Produtos: Cento de beijinho</p>
+                <p>Dia da entrega: 23/04/2021</p>
+                <p>Hora da entrega: 10:00</p>
+            </div>
+            <div class="notificacoesPedidos">
+                <div class="titleNotificacao">
+                    <h2>Pedido do/a cliente</h2>
+                </div>
+                <p>Produtos: Cento de beijinho</p>
+                <p>Dia da entrega: 23/04/2021</p>
+                <p>Hora da entrega: 10:00</p>
+            </div><div class="notificacoesPedidos">
+                <div class="titleNotificacao">
+                    <h2>Pedido do/a cliente</h2>
+                </div>
+                <p>Produtos: Cento de beijinho</p>
+                <p>Dia da entrega: 23/04/2021</p>
+                <p>Hora da entrega: 10:00</p>
+            </div>
+            <div class="notificacoesPedidos">
+                <div class="titleNotificacao">
+                    <h2>Pedido do/a cliente</h2>
+                </div>
+                <p>Produtos: Cento de beijinho</p>
+                <p>Dia da entrega: 23/04/2021</p>
+                <p>Hora da entrega: 10:00</p>
+            </div>
 
-			<div class="calendario">
-				<div class="titleNotificacao">
-					Calendário
-				</div>
-				<div>
-					<img src="{{ asset('imagens/calendario.png') }}">
-				</div>
-			</div>
-
-			<div class="notificacoes">
-				<div class="titleNotificacao">
-					Notificação (escolhendo)
-				</div>
-				<div>
-
-				</div>
-			</div>
 		</div>
 	</main>
 

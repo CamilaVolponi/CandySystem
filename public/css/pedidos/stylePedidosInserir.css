@@ -1,0 +1,85 @@
+.formModalInserirPedido{
+    margin-right: 1%;
+}
+
+.imgBuscarClientes{
+    width: 20px;
+}
+
+.buscarClientes{
+    margin-left: 78%;
+    width: 20%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 5px;
+    color: white;
+    border: 1px;
+}
+
+.endereco {
+    color: #E53471;
+    font-size: 18px;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+
+.formModalInserirPedido label, .formModalEditarPedido label{
+    width: 20%;
+    margin-bottom: 10%;
+}
+
+.formModalInserirPedido input, .formModalEditarPedido input{
+    border-radius: 5px;
+    width: 30%;
+    height: 10px;
+    padding: 5px;
+}
+
+/*modal inserir pedido*/
+.modalInserirPedido{
+    color: black;
+    background: white;
+    width: 70%;
+    padding: 10px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+.tabelaInserirPedido{
+    width: 98%;
+    height: 10%;
+    border: solid 2px #3F3F46;
+    border-radius: 10px;
+    color: #3F3F46;
+    margin-top: 1%;
+}
+
+.cadastroPedido, .inserirProdutoEmPedido, .editarPedidoBotao, .editarProdutoEmPedido{
+    margin-top: 1%;
+    margin-left: 78%;
+    width: 20%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.inserirProdutoPedido{
+    margin-top: 1%;
+    margin-left: 40%;
+    width: 20%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.cadastroPedido:hover,
+.inserirProdutoPedido:hover,
+.inserirProdutoEmPedido:hover,
+.buscarClientes:hover{
+    background-color: #EA5D8E;
+}

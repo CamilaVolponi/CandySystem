@@ -61,7 +61,9 @@ footer{
     font-size: 22px;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 5px;
 }
 
 .menu li a{
@@ -84,6 +86,21 @@ footer{
     height: 90%;
     border-radius: 15px;
     margin: 10px;
+}
+
+.titulo{
+    text-align: center;
+    color: #E53471;
+    font-size: 30px;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+
+.subtitulo{
+    color: #E53471;
+    font-size: 23px;
+    margin-bottom: 1%;
+    margin-top: 2%;
 }
 /*possui em todas as telas - fim*/
 

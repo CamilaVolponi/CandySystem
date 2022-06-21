@@ -18,13 +18,17 @@ class Pedido extends Model
     ];
 
     protected $casts = [
-        "forma_pagamento" => TipoFormaDePagamento::class,
-        "data_entrega" => "datetime:dd-mm-YYYY",
-        "hora_entrega" => "datatime:HH:00"
+        "forma_pagamento" => TipoFormaDePagamento::class
+        //"data_entrega" => "date:d/m/Y",
+        //"hora_entrega" => "datetime:H:i"
     ];
 
     public function produtos(){
         // belongsToMany(<Model com quem se relaciona>,<tabela intermediária>, <atributo que se relaciona com o model Pedido>, <atributo que se relaciona com o model Produto>)
         return $this->belongsToMany(Produto::class,"produto_pedido", "pedido_id", "produto_id");
+    }
+
+    public function cliente(){
+        return $this->belongsTo(Cliente::class, "cliente_id", "id");
     }
 }

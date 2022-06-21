@@ -20,7 +20,7 @@ return new class extends Migration
                 ->references("id")
                 ->onDelete("CASCADE")
                 ->onUpdate("CASCADE");
-            $table->foreignId("pessoa_id")
+            $table->foreignId("responsavel_id")
                 ->constrained("pessoas")
                 ->references("id")
                 ->onDelete("CASCADE")

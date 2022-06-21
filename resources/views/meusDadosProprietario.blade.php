@@ -25,7 +25,7 @@
                 <tbody>
                 <tr>
                     <td>Mariazinha Santos</td>
-                    <td>Proprietário, Confeiteiro</td>
+                    <td>Proprietário</td>
                     <td>123.456.789-00</td>
                     <td>96865-5963</td>
                     <td>mariazinha.santos@gmail.com</td>
@@ -35,14 +35,14 @@
                             <div class="dropdown-content">
                                 <a href="#" class="editarFuncionario">Editar</a>
                                 <a href="#" class="excluirFuncionario">Excluir</a>
-                                <a href="#" class="adicionarCargo">Adicionar cargo</a>
+                                <a href="#" class="tornarProprietario">Tornar proprietário</a>
                             </div>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td>Paulo Soares</td>
-                    <td>Confeiteiro</td>
+                    <td>Funcionario</td>
                     <td>789.654.321-25</td>
                     <td>95862-5874</td>
                     <td>paulo.soares@gmail.com</td>
@@ -52,7 +52,7 @@
                             <div class="dropdown-content">
                                 <a href="#" class="editarFuncionario">Editar</a>
                                 <a href="#" class="excluirFuncionario">Excluir</a>
-                                <a href="#" class="adicionarCargo">Adicionar cargo</a>
+                                <a href="#" class="tornarProprietario">Tornar proprietário</a>
                             </div>
                         </div>
                     </td>
@@ -142,23 +142,6 @@
             <button class="fechar">X</button>
             <h1 class="centralizar">Confirma a exclusão deste funcionário?</h1>
             <p class="centralizar"><a href="#">Sim</a>|<a href="#">Não</a></p>
-        </div>
-    </div>
-
-    <!-- modal adicionar cargo a funcionario -->
-    <div id="modal-adicionar-cargo-funcionario" class="modal-container">
-        <div class="modalAdicionarCargoFuncionario">
-            <button class="fechar">X</button>
-            <div>
-                <label>Cargo:
-                    <select>
-                        <option>Proprietários</option>
-                        <option>Confeiteiro</option>
-                    </select>
-                </label>
-            </div>
-
-            <button class="editarAdicionarCargo">Adicionar cargo ao funcionário</button>
         </div>
     </div>
 
