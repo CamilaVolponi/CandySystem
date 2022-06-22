@@ -27,9 +27,16 @@ class ProdutoPedidoSeeder extends Seeder
 
         foreach ($pedidos as $pedido){
             $numeroDeProdutos = $this->faker->numberBetween(1, $countProdutos - 1);
-            ProdutoPedido::factory($numeroDeProdutos)->create([
-                "pedido_id" => $pedido->id
-            ]);
+            for ($i = 0; $i < $numeroDeProdutos; $i++) {
+                $index_produto = $this->faker->numberBetween(1, $countProdutos - 1);
+                $produto = $produtos[$index_produto];
+                $pedido->produtos()->attach($produto->id, [
+                    "quantidade" => $this->faker->numberBetween(1, 15),
+                    "preco" => $produto->preco,
+                    "created_at" => now(),
+                    "updated_at" => now(),
+                ]);
+            }
         }
     }
 }

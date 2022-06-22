@@ -25,7 +25,7 @@ class Pedido extends Model
 
     public function produtos(){
         // belongsToMany(<Model com quem se relaciona>,<tabela intermediária>, <atributo que se relaciona com o model Pedido>, <atributo que se relaciona com o model Produto>)
-        return $this->belongsToMany(Produto::class,"produto_pedido", "pedido_id", "produto_id");
+        return $this->belongsToMany(Produto::class,"produto_pedido", "pedido_id", "produto_id")->withPivot("quantidade", "preco");;
     }
 
     public function cliente(){
