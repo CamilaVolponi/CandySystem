@@ -14,4 +14,16 @@ class Empresa extends Model
     protected $fillable = [
         "cnpj" , "nome"
     ];
+
+    public function produtos(){
+        return $this->hasMany(Produto::class, "empresa_id","id");
+    }
+
+    public function pedidos(){
+        return $this->hasMany(Pedido::class, "empresa_id","id");
+    }
+
+    public function funcionarios(){
+        return $this->hasMany(Funcionario::class, "empresa_id","id");
+    }
 }

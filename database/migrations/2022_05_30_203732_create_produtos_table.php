@@ -17,6 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string("nome");
             $table->float("preco");
+            $table->foreignId("empresa_id")
+                ->constrained("empresas")
+                ->references("id")
+                ->onDelete("CASCADE")
+                ->onUpdate("CASCADE");
             $table->timestamps();
         });
     }

@@ -17,9 +17,9 @@ class ModoDePreparoFactory extends Factory
      */
     public function definition(): array
     {
-        $faker = \Faker\Factory::create();
-        $fakerU = $faker->unique();
+        $fakerU = $this->faker->unique(true, 15000);
         $count = $fakerU->randomDigitNotZero();
+
         return [
             "descricao_do_passo" => "Passo " . $count,
             "ordem" => $count

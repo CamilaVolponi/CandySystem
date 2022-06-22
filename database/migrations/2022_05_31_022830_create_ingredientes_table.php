@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('ingredientes', function (Blueprint $table) {
             $table->id();
+            $table->string("descricao");
+            $table->string("unidadeDeMedida");
+            $table->unsignedFloat("quantidade");
             $table->foreignId("produto_id")
                 ->constrained("produtos")
                 ->onDelete("CASCADE")
                 ->onUpdate("CASCADE");
-            $table->string("descricao");
-            $table->string("unidadeDeMedida");
-            $table->unsignedFloat("quantidade");
             $table->timestamps();
         });
     }

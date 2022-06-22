@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('produto_pedido', function (Blueprint $table) {
-            $table->integer("quantidade");
-            $table->unsignedFloat("preco");
-            $table->foreignId("produto_id")
-                ->constrained("produtos")
-                ->references("id")
-                ->onDelete("CASCADE")
-                ->onUpdate("CASCADE");
-            $table->foreignId("pedido_id")
-                ->constrained("pedidos")
+        Schema::create('funcionarios', function (Blueprint $table) {
+            $table->id();
+            $table->string("cpf")->unique();
+            $table->string("nome");
+            $table->string("telefone");
+            $table->string("email")->unique();
+            $table->string("senha");
+            $table->string("cargo");
+            $table->foreignId("empresa_id")
+                ->constrained("empresas")
                 ->references("id")
                 ->onDelete("CASCADE")
                 ->onUpdate("CASCADE");
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produto_pedido');
+        Schema::dropIfExists('funcionarios');
     }
 };

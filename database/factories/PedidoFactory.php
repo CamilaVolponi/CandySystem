@@ -4,7 +4,8 @@ namespace Database\Factories;
 
 use App\Enums\TipoFormaDePagamento;
 use App\Models\Cliente;
-use App\Models\Pessoa;
+use App\Models\Empresa;
+use App\Models\Funcionario;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,23 +20,26 @@ class PedidoFactory extends Factory
      */
     public function definition()
     {
-        $fakerU = $this->faker->unique();
+        $fakerU = $this->faker->unique(true);
 
-        // getPessoa e getCliente
-        $responsavel = Pessoa::all()->first()->toArray();
-        $cliente = Cliente::all()->first()->toArray();
+        $empresas = Empresa::all();
+        $clientes = Cliente::all();
 
-        var_dump($responsavel);
+        $empresaAleatoria = $this->faker->numberBetween(1, count($empresas) - 1);
+        $clienteAleatorio = $this->faker->numberBetween(1, count($clientes) - 1);
+
+        $empresa = $empresas[$empresaAleatoria];
+        $cliente = $clientes[$clienteAleatorio];
 
         $cases = TipoFormaDePagamento::cases();
         $sizeCases = count($cases);
 
         return [
-            "responsavel_id" => $responsavel["id"],
-            "cliente_id" => $cliente["id"],
             "data_entrega" => now(),
             "hora_entrega" => now(),
-            "forma_pagamento" =>  $cases[$fakerU->numberBetween(0, $sizeCases-1)]
+            "forma_pagamento" =>  $cases[$fakerU->numberBetween(0, $sizeCases-1)],
+            "empresa_id" => $empresa->id,
+            "cliente_id" => $cliente->id
         ];
     }
 }

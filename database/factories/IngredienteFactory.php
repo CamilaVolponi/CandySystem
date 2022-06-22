@@ -34,6 +34,7 @@ class IngredienteFactory extends Factory
 
         $cases = TipoUnidadeDeMedida::cases();
         $sizeCases = count($cases);
+
         return [
             "descricao" => $this->getDescription($fakerU),
             "unidadeDeMedida" =>

@@ -15,8 +15,7 @@ class Produto extends Model
         "nome", "preco"
     ];
 
-    public function modos_de_preparo()
-    {
+    public function modos_de_preparo(){
         // (Referencia do Model da tabela | nome da coluna na tabela do model |
         // nome da coluna que serve como chave estrangeire na tabela atual)
         return $this->hasMany(ModoDePreparo::class, "produto_id", "id");
@@ -29,5 +28,9 @@ class Produto extends Model
     public function pedidos(){
         // belongsToMany(<Model com quem se relaciona>,<tabela intermediária>, <atributo que se relaciona com o model Produto>, <atributo que se relaciona com o model Pedido>)
         return $this->belongsToMany(Pedido::class,"produto_pedido", "produto_id", "pedido_id");
+    }
+
+    public function empresa(){
+        return $this->belongsTo(Empresa::class, "empresa_id", "id");
     }
 }

@@ -15,19 +15,19 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
+            $table->date("data_entrega");
+            $table->time("hora_entrega");
+            $table->string("forma_pagamento");
             $table->foreignId("cliente_id")
                 ->constrained("clientes")
                 ->references("id")
                 ->onDelete("CASCADE")
                 ->onUpdate("CASCADE");
-            $table->foreignId("responsavel_id")
-                ->constrained("pessoas")
+            $table->foreignId("empresa_id")
+                ->constrained("empresas")
                 ->references("id")
                 ->onDelete("CASCADE")
                 ->onUpdate("CASCADE");
-            $table->date("data_entrega");
-            $table->time("hora_entrega");
-            $table->string("forma_pagamento");
             $table->timestamps();
         });
     }

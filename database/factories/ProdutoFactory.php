@@ -28,7 +28,6 @@ class ProdutoFactory extends Factory
      */
     public function definition(): array
     {
-//        $this->faker = new \Faker\Generator();
         $this->faker->addProvider(new \FakerRestaurant\Provider\pt_BR\Restaurant($this->faker));
         $fakerU = $this->faker->unique(true);
         return [

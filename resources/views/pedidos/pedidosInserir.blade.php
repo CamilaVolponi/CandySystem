@@ -18,8 +18,9 @@
             <fieldset>
                 <legend class="subtitulo">Informações do Cliente</legend>
 
-                <button class="buscarClientes"><img class="imgBuscarClientes" src="{{ asset("imagens/busca.png") }}">  Buscar cliente</button>
 
+                <label>CPF: <input type="text" name="nomeCliente" required></label><button class="buscarClientes"><img class="imgBuscarClientes" src="{{ asset("imagens/busca.png") }}">  Buscar cliente</button>
+                <br><br>
                 <label>Nome: <input type="text" name="nomeCliente" required></label>
                 <br><br>
                 <label>Telefone: <input type="text" name="telefoneCliente" required></label>

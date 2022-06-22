@@ -15,11 +15,6 @@ return new class extends Migration
     {
         Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("cliente_id")
-                ->constrained("clientes")
-                ->references("id")
-                ->onDelete("CASCADE")
-                ->onUpdate("CASCADE");
             $table->string("cep");
             $table->string("rua");
             $table->string("bairro");
@@ -27,6 +22,11 @@ return new class extends Migration
             $table->integer("numero")->nullable();
             $table->text("complemento")->nullable();
             $table->text("referencia")->nullable();
+            $table->foreignId("cliente_id")
+                ->constrained("clientes")
+                ->references("id")
+                ->onDelete("CASCADE")
+                ->onUpdate("CASCADE");
             $table->timestamps();
         });
     }

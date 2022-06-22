@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Cliente;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,6 +18,7 @@ class EnderecoFactory extends Factory
     public function definition()
     {
         $this->faker->addProvider(new \Faker\Provider\pt_BR\Address($this->faker));
+
         return [
             "cep" => $this->faker->postcode,
             "rua" => $this->faker->streetName,
@@ -24,7 +26,8 @@ class EnderecoFactory extends Factory
             "cidade" => $this->faker->city,
             "numero" => $this->faker->buildingNumber,
             "complemento" => $this->faker->optional()->secondaryAddress(), //text
-            "referencia" => "perto da " . $this->faker->optional()->streetAddress() // text
+            "referencia" => "perto da " . $this->faker->optional()->streetAddress(), // text
+//            "cliente_id" => $cliente->id // passado pelo seeder
         ];
     }
 }

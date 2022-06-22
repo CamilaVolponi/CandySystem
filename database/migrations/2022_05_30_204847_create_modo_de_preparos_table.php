@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('modos_de_preparo', function (Blueprint $table) {
             $table->id();
+            $table->string("descricao_do_passo");
+            $table->integer("ordem");
             $table->foreignId("produto_id")
                 ->constrained("produtos")
                 ->references("id")
                 ->onDelete("CASCADE")
                 ->onUpdate("CASCADE");
-            $table->string("descricao_do_passo");
-            $table->integer("ordem");
             $table->timestamps();
         });
     }
