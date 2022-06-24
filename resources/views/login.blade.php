@@ -13,19 +13,19 @@
 
             <div class="informacoesLogin">
                 <label>Usuário</label>
-                <input type="text" name="cpf" placeholder="Digite seu CPF" required value="{{old('cpf')}}">
+                <input type="text" name="cpf" placeholder="Digite seu CPF" required value="{{$cpf ?? ''}}">
             </div>
 
             <div class="informacoesLogin">
                 <label>Senha</label>
-                <input type="password" name="senha" placeholder="Digite sua senha" required value="{{old('senha')}}">
+                <input type="password" name="senha" placeholder="Digite sua senha" required>
             </div>
 
-            @if ($errors->all())
+            @if (isset($errors) && $errors)
                 <p style="color:red;text-align: center;margin-bottom: 0.5em;">cpf ou senha inválidos</p>
             @endif
 
-            <button class="informacoesLogin">ENTRAR</button>
+            <button type="submit" class="informacoesLogin">ENTRAR</button>
             <a href="telaCadastro.html" class="informacoesLogin">Não possui cadastro?</a>
         </div>
         <p class="copyright">&copy; Copyright Candy System</p>

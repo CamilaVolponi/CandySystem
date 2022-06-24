@@ -20,8 +20,6 @@ class PedidoFactory extends Factory
      */
     public function definition()
     {
-        $fakerU = $this->faker->unique(true);
-
         $empresas = Empresa::all();
         $clientes = Cliente::all();
 
@@ -37,7 +35,7 @@ class PedidoFactory extends Factory
         return [
             "data_entrega" => now(),
             "hora_entrega" => now(),
-            "forma_pagamento" =>  $cases[$fakerU->numberBetween(0, $sizeCases-1)],
+            "forma_pagamento" =>  $cases[$this->faker->numberBetween(0, $sizeCases-1)],
             "empresa_id" => $empresa->id,
             "cliente_id" => $cliente->id
         ];

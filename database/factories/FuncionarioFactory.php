@@ -25,7 +25,8 @@ class FuncionarioFactory extends Factory
             "nome" => $this->faker->name(),
             "telefone" => $this->faker->phoneNumber(),
             "email" => $fakerU->email(),
-            "senha" => $this->faker->password,
+//            "senha" => bcrypt('senha123'),
+            "senha" => 'senha123',
 //            "cargo" =>  Passado pelo factory de Empresa,
 //            "empresa_id" => Passado pelo factory de Empresa,
         ];

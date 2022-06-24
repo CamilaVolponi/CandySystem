@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
-    
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
@@ -26,9 +26,9 @@ jobs:
           README_LARAVEL.md
           README.md
 
-  build: 
+  build:
     needs: deploy
-    name: 🛠️ Build to prodution
+    name: 🛠️ Build to test
     runs-on: ubuntu-latest
     steps:
       - name: 🔐 Executing Commands by SSH
@@ -41,4 +41,3 @@ jobs:
           script: |
             cd ${{ secrets.SSH_REMOTE_TARGET_TEST }}
             composer install
-  

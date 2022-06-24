@@ -34,7 +34,7 @@
                         <td>{{ $pedido->hora_entrega }}</td>
                         <td>Valor total</td>
                         <td> {{ $pedido->forma_pagamento->value }} </td>
-                        <td><div class="dropdown">
+                        <td class="centerAcoes"><div class="dropdown">
                                 <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
                                 <div class="dropdown-content">
                                     <a href="#" class="editarPedido">Editar</a>

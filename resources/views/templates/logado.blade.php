@@ -12,7 +12,7 @@
                     <a href="{{ route('main.index') }}"><img src="{{ asset('imagens/logo.png') }}" class="logo"></a>
                     <h1 class="informacaoUsuario">
                         <img src="{{ asset('imagens/meusDados.png') }}" class="iconeInformacaoUsuario">
-                        123.456.789-00
+                        {{ auth()->user()->cpf }}
                     </h1>
                     <li>
                         <a href="{{ route('pedidos.index') }}">
