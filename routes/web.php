@@ -36,6 +36,7 @@ Route::middleware(['isUser'])->group(function () {
 
     Route::prefix("meus-dados")->group(function(){
         Route::get('/', [MeusDadosController::class, 'index'])->name('meusDadosProprietario.index');
+        Route::get('/create', [MeusDadosController::class, 'create'])->name('funcionario.create');
     });
 
     Route::prefix("pedidos")->group(function(){

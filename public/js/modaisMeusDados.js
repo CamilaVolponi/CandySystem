@@ -10,16 +10,7 @@ function incialModal(modalID){
     }
 }
 
-const inserirFuncionario = document.querySelector('.inserirFuncionario');
-inserirFuncionario.addEventListener('click', () => incialModal('modal-inserir-funcionario'));
-
 const arrayExcluirFuncionario = document.querySelectorAll('.excluirFuncionario');
 [...arrayExcluirFuncionario].forEach(element => {
     element.addEventListener('click', () => incialModal('modal-excluir-funcionario'));
 });
-
-const arrayEditarFuncionario = document.querySelectorAll('.editarFuncionario');
-[...arrayEditarFuncionario].forEach(element => {
-    element.addEventListener('click', () => incialModal('modal-editar-funcionario'));
-});
-

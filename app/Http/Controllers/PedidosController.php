@@ -35,12 +35,25 @@ class PedidosController extends Controller
         ];
         return view('pedidos/pedidosInserir', compact("data"));
     }
+    // informações:
+    //	- cliente: cpf, nome, telefone, endereco* OK
+    //	- endereco: CEP, rua, bairro, cidade, numero, complemento, referencia OK
+    //	- pedido: dia de entrega, horario da entrega e forma de pagamento OK
+    //	- produto: lista de produtos com nome e quantidade
 
     public function edit(Request $request, $id){
         $data = [
             "title" => "Editar",
             "id" => $id
         ];
+        $pedido_select = Pedido::find($id);
+
+        $pedido = $pedido_select;
+        $cliente = $pedido_select->cliente()->first();
+        $endereco = $cliente->endereco()->first();
+        $produtos = $pedido_select->produtos();
+
+        dd($pedido->toArray(), $cliente->toArray(), $endereco->toArray(), $produtos);
         return view('pedidos/pedidosInserir', compact("data"));
     }
 

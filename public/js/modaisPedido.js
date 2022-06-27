@@ -10,27 +10,9 @@ function incialModal(modalID){
     }
 }
 
-const botaoPedidos = document.querySelector('.botaoPedidos');
-botaoPedidos.addEventListener('click', () => incialModal('modal-inserir-pedido'));
-
-const arrayInserirProdutoPedido = document.querySelectorAll('.inserirProdutoPedido');
-[...arrayInserirProdutoPedido].forEach(element => {
-    element.addEventListener('click', () => incialModal('modal-inserir-produto-pedido'));
-});
-
-const arrayEditarPedido = document.querySelectorAll('.editarPedido');
-[...arrayEditarPedido].forEach(element => {
-    element.addEventListener('click', () => incialModal('modal-editar-pedido'));
-});
-
 const arrayExcluirPedido = document.querySelectorAll('.excluirPedido');
 [...arrayExcluirPedido].forEach(element => {
     element.addEventListener('click', () => incialModal('modal-excluir-pedido'));
-});
-
-const arrayVisualizarPedido = document.querySelectorAll('.visualizarPedido');
-[...arrayVisualizarPedido].forEach(element => {
-    element.addEventListener('click', () => incialModal('modal-visualizar-pedido'));
 });
 
 const arrayExcluirProdutoPedido = document.querySelectorAll('.ExcluirProdutoPedido');

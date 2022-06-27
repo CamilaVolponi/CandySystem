@@ -10,22 +10,10 @@ function incialModal(modalID){
     }
 }
 
-const botaoProdutos = document.querySelector('.botaoProdutos');
-botaoProdutos.addEventListener('click', () => incialModal('modal-inserir-produto'));
-
-const arrayEditarProduto = document.querySelectorAll('.editarProduto');
-[...arrayEditarProduto].forEach(element => {
-    element.addEventListener('click', () => incialModal('modal-editar-produto'));
-});
 
 const arrayExcluirProduto = document.querySelectorAll('.excluirProduto');
 [...arrayExcluirProduto].forEach(element => {
     element.addEventListener('click', () => incialModal('modal-excluir-produto'));
-});
-
-const arrayVisualizarProduto = document.querySelectorAll('.visualizarProduto');
-[...arrayVisualizarProduto].forEach(element => {
-    element.addEventListener('click', () => incialModal('modal-visualizar-produto'));
 });
 
 const arrayEditarIngrediente = document.querySelectorAll('.EditarIngrediente');

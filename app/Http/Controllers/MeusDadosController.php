@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\Funcionario;
 use Illuminate\Http\Request;
 
 class MeusDadosController extends Controller
 {
     public function index(Request $request){
-        return view('meusDadosProprietario');
+        $funcionarios = Funcionario::all();
+        return view('meusDadosProprietario', compact('funcionarios'));
+    }
+
+    public function create(Request $request){
+        return view('meusDadosProprietario/meusDadosInserir');
     }
 
     public function endereco(Request $request){

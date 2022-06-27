@@ -22,10 +22,10 @@
                 </tr>
             </thead>
             <tbody>
-               @foreach($pedidos as $pedido)
+                @foreach($pedidos as $pedido)
                    @php
-                        $client = $pedidos->find($pedido->id)->cliente;
-                        $enderecoClient = $client->find($client->id)->endereco;
+                      $client = $pedidos->find($pedido->id)->cliente;
+                      $enderecoClient = $client->find($client->id)->endereco;
                    @endphp
                     <tr>
                         <td>{{ $client->nome }}</td>
@@ -44,7 +44,7 @@
                             </div>
                         </td>
                     </tr>
-               @endforeach
+                @endforeach
             </tbody>
         </table>
 

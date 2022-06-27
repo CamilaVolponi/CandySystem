@@ -41,6 +41,5 @@
         </div>
     </main>
 
-    <script src={{ asset('js/modaisMeusDados.js') }} ></script>
-    <link rel="stylesheet" href="{{ asset('css/styleMeusDadosFuncionario.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styleMeusDados.css') }}">
 @endsection

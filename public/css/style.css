@@ -113,7 +113,6 @@ footer{
     padding-top: 3%;
     width: 490px;
     display: block;
-
 }
 
 input::placeholder {
@@ -164,10 +163,9 @@ thead th{
 }
 
 tbody td{
-    padding-bottom: 1%;
+    /*padding-bottom: 1%;*/
     padding-left: 1%;
     border: solid 2px #3F3F46;
-    width: fit-content;
 }
 
 .centerAcoes{
