@@ -15,6 +15,15 @@ class Produto extends Model
         "nome", "preco"
     ];
 
+    public static function getDadosVisualizacaoProduto($id) : array{
+        $produto_find = Produto::find($id);
+        $produto = $produto_find->toArray();
+
+        $ingredientes = $produto_find->ingredientes()->get()->toArray();
+        $modos_de_preparos = $produto_find->modos_de_preparo()->get()->toArray();
+        return compact("produto", "ingredientes", "modos_de_preparos");
+    }
+
     public function modos_de_preparo(){
         // (Referencia do Model da tabela | nome da coluna na tabela do model |
         // nome da coluna que serve como chave estrangeire na tabela atual)

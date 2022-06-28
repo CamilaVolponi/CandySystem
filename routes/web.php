@@ -55,7 +55,7 @@ Route::middleware(['isUser'])->group(function () {
     Route::prefix("/produtos")->group(function () {
         Route::get('/', [ProdutosController::class, 'index'])->name('produtos.index');
         Route::get('/create', [ProdutosController::class, 'create'])->name('produtos.create');
-        Route::get('/show', [ProdutosController::class, 'show'])->name('produtos.show');
+        Route::get('/show/{id}', [ProdutosController::class, 'show'])->name('produtos.show');
     });
 
     Route::get('/receitas', [ReceitasController::class, 'index'])->name('receitas.index');

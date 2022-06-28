@@ -26,7 +26,7 @@
                             <div class="dropdown-content">
                                 <a href="#" class="editarProduto">Editar</a>
                                 <a href="#" class="excluirProduto">Excluir</a>
-                                <a href="{{ route('produtos.show') }}" class="visualizarProduto">Visualizar</a>
+                                <a href="{{ route('produtos.show', "$produto->id") }}" class="visualizarProduto">Visualizar</a>
                             </div>
                         </div>
                     </td>

@@ -60,6 +60,6 @@ class PedidosController extends Controller
     }
 
     public function show(Request $request, $id){
-        return view('pedidos/pedidosVisualizar', Pedido::getDadosVisualizacao($id));
+        return view('pedidos/pedidosVisualizar', Pedido::getDadosVisualizacaoPedido($id));
     }
 }
