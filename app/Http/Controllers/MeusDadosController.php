@@ -9,8 +9,23 @@ use Illuminate\Http\Request;
 class MeusDadosController extends Controller
 {
     public function index(Request $request){
-        $funcionarios = Funcionario::all();
-        return view('meusDadosProprietario', compact('funcionarios'));
+        if(auth()->user()->cargo == \App\Enums\TipoCargo::PROPRIETARIO){
+            $funcionarios = Funcionario::all();
+            $urlMeusDados = route('meusDados.index');
+            $data = [
+                "funcionarios" => $funcionarios,
+                "urlMeusDados" => $urlMeusDados
+            ];
+            return view('meusDadosProprietario', compact('funcionarios', 'urlMeusDados'));
+        } else if(auth()->user()->cargo == \App\Enums\TipoCargo::FUNCIONARIO){
+            $funcionarios = Funcionario::all();
+            $urlMeusDados = route('meusDados.index');
+            $data = [
+                "funcionarios" => $funcionarios,
+                "urlMeusDados" => $urlMeusDados
+            ];
+            return view('meusDadosFuncionario', compact('funcionarios', 'urlMeusDados'));
+        }
     }
 
     public function create(Request $request){

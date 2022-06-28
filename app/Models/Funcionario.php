@@ -39,6 +39,10 @@ class Funcionario extends Authenticatable
         "cargo" => TipoCargo::class
     ];
 
+    public function getEmpresa(){
+        return $this->empresa()->first();
+    }
+
     public function empresa(){
         return $this->belongsTo(Empresa::class, "empresa_id", "id");
     }

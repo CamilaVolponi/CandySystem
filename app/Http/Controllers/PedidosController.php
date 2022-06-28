@@ -25,7 +25,9 @@ class PedidosController extends Controller
 //    }
 
     public function index(Request $request){
-        $pedidos = Pedido::all();
+        $empresa_id = auth()->user()->getEmpresa()->id;
+//        dd ($id);
+        $pedidos = Pedido::where("empresa_id", $empresa_id)->get();
         return view('pedidos',compact('pedidos'));
     }
 
@@ -57,7 +59,7 @@ class PedidosController extends Controller
         return view('pedidos/pedidosInserir', compact("data"));
     }
 
-    public function show(Request $request){
-        return view('pedidos/pedidosVisualizar');
+    public function show(Request $request, $id){
+        return view('pedidos/pedidosVisualizar', Pedido::getDadosVisualizacao($id));
     }
 }

@@ -7,21 +7,27 @@
         <p class="titulo">VISUALIZAR PEDIDO</p>
         <fieldset>
             <legend class="subtitulo">Informações do Cliente</legend>
-            <p>Nome: João</p>
-            <p>Telefone: 99999-9999</p>
-            <p>Endereço: Rua Santos Dumont, n 76, Serra</p>
+            <p>Nome: {{$cliente["nome"]}}</p>
+            <p>Telefone: {{$cliente["telefone"]}}</p>
+            <p>Endereço: {{$cliente["endereco"]}}</p>
         </fieldset>
         <fieldset>
             <legend class="subtitulo">Informações do pedido</legend>
-            <p>Data da entrega: 26/04/2022</p>
-            <p>Hora da entrega: 18:00</p>
-            <p>Valor total: 10</p>
-            <p>Forma de pagamento: Dinheiro</p>
+            <p>Data da entrega: {{$pedido["data_entrega"]}}</p>
+            <p>Hora da entrega: {{$pedido["hora_entrega"]}}</p>
+            <p>Valor total: {{$pedido["valor_total"]}}</p>
+            <p>Forma de pagamento: {{ $pedido["forma_pagamento"]}}</p>
         </fieldset>
         <fieldset>
             <legend class="subtitulo">Produtos do pedido</legend>
-            <p>Quantidade: 2</p>
-            <p>Produto: Pão</p>
+            @foreach($produtos as $produto)
+                <div>
+                    <p>Produto: {{$produto["nome"]}}</p>
+                    <p>Quantidade: {{$produto["quantidade"]}}</p>
+                    <p>Valor unitário: {{$produto["preco"]}}</p>
+                    <br>
+                </div>
+            @endforeach
         </fieldset>
 	</main>
 

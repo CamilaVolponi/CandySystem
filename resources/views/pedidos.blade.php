@@ -39,7 +39,7 @@
                                 <div class="dropdown-content">
                                     <a href="#" class="editarPedido">Editar</a>
                                     <a href="#" class="excluirPedido">Excluir</a>
-                                    <a href="{{ route('pedidos.show') }}" class="visualizarPedido">Visualizar</a>
+                                    <a href="{{ route('pedidos.show', "$pedido->id")}}" class="visualizarPedido">Visualizar</a>
                                 </div>
                             </div>
                         </td>

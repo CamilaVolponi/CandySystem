@@ -30,17 +30,19 @@ class FuncionarioSeeder extends Seeder
         $empresas = Empresa::all();
 
         foreach ($empresas as $empresa){
-            Funcionario::factory(1)->create([
-                "cargo" => TipoCargo::PROPRIETARIO_MASTER,
+            $numeroDeProprietarios = $this->faker->numberBetween(1, 2);
+
+            Funcionario::factory($numeroDeProprietarios)->create([
+                "cargo" => TipoCargo::PROPRIETARIO,
                 "empresa_id" => $empresa->id
             ]);
 
             // Um empresa pode ter um ou mais pessoas como proprietário ou funcionário
-            $numeroDeFuncionarios = $this->faker->numberBetween(1, 3);
+            $numeroDeFuncionarios = $this->faker->numberBetween(1, 4);
 
             Funcionario::factory($numeroDeFuncionarios)->create([
                 // Gera "cargo" aleatório diferente de proprietário-master
-                "cargo" => $cases[$this->faker->numberBetween(1, $sizeCases-1)],
+                "cargo" => TipoCargo::FUNCIONARIO,
                 "empresa_id" => $empresa->id
             ]);
         }

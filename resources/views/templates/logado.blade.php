@@ -33,7 +33,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('meusDadosProprietario.index') }}">
+{{--                        <a href="{{ //urlMeusDados }}"> --}}
+                        <a href="{{ route("meusDados.index") }}">
                             <img src="{{ asset('imagens/meusDados.png') }}" class="iconeMenu">
                             Meus Dados
                         </a>

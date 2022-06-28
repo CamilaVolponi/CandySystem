@@ -25,6 +25,13 @@ Route::post('/login', [LoginController::class, 'sign_in'])->name('login.sign_in'
 
 Route::get('/cadastro', [CadastroController::class, 'index'])->name('cadastro.index');
 
+Route::middleware(['isUser', 'Proprietario'])->group(function () {
+    Route::prefix("meus-dados")->group(function(){
+        Route::get('/', [MeusDadosController::class, 'index'])->name('meusDados.index');
+        Route::get('/create', [MeusDadosController::class, 'create'])->name('funcionario.create');
+    });
+});
+
 Route::middleware(['isUser'])->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('main.index');
 
@@ -35,15 +42,14 @@ Route::middleware(['isUser'])->group(function () {
     });
 
     Route::prefix("meus-dados")->group(function(){
-        Route::get('/', [MeusDadosController::class, 'index'])->name('meusDadosProprietario.index');
-        Route::get('/create', [MeusDadosController::class, 'create'])->name('funcionario.create');
+        Route::get('/', [MeusDadosController::class, 'index'])->name('meusDados.index');
     });
 
     Route::prefix("pedidos")->group(function(){
         Route::get('/', [PedidosController::class, 'index'])->name('pedidos.index');
         Route::get('/create', [PedidosController::class, 'create'])->name('pedidos.create');
         Route::get('/edit/{id}', [PedidosController::class, 'edit'])->name('pedidos.edit');
-        Route::get('/show', [PedidosController::class, 'show'])->name('pedidos.show');
+        Route::get('/show/{id}', [PedidosController::class, 'show'])->name('pedidos.show');
     });
 
     Route::prefix("/produtos")->group(function () {

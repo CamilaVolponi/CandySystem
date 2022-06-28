@@ -4,13 +4,22 @@
 
 @section('content')
 	<main>
-        <div class="dadosEmpresa">
-            <p class="tituloVisualizar">Dados da empresa:</p>
+        <fieldset class="dadosEmpresa">
+            <p>Nome: ~NOME~</p>
+            <br>
+            <p>CPF: ~CPF~</p>
+            <br>
+            <p>Telefone: ~TELEFONE~</p>
+            <br>
+            <p>E-mail: ~EMAIL~</p>
+            <br>
+            <p>Cargo: ~CARGO~</p>
+        </fieldset>
+        <fieldset class="dadosEmpresa">
+            <legend class="tituloVisualizar">Dados da empresa:</legend>
 
             <p>Nome da empresa: ~NOME~ </p>
             <p>CNPJ: ~CNPJ~ </p>
-        </div>
-        <div>
             <table class="tabela">
                 <thead>
                 <tr>
@@ -59,7 +68,7 @@
                 </tr>
                 </tbody>
             </table>
-        </div>
+        </fieldset>
 
         <div>
             <a href="{{ route('funcionario.create') }}"><button class="inserirFuncionario">Inserir Funcionario</button></a>

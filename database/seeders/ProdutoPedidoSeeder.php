@@ -26,8 +26,10 @@ class ProdutoPedidoSeeder extends Seeder
         $countProdutos = count($produtos);
 
         foreach ($pedidos as $pedido){
-            $numeroDeProdutos = $this->faker->numberBetween(1, $countProdutos - 1);
+            // Indica quantidade de produtos no pedido
+            $numeroDeProdutos = $this->faker->numberBetween(1, 5);
             for ($i = 0; $i < $numeroDeProdutos; $i++) {
+                // Pega produto aleatório
                 $index_produto = $this->faker->numberBetween(1, $countProdutos - 1);
                 $produto = $produtos[$index_produto];
                 $pedido->produtos()->attach($produto->id, [
