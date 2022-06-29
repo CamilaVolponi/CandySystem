@@ -12,36 +12,20 @@ class LoginController extends Controller
         return view('login', ['errors' => false]);
     }
 
-    /*
     public function sign_in(Request $request){
-        $request->validate([
-            'cpf' => array(
-                'required',
-                'regex:/([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{3}[0-9]{3}[0-9]{3}[0-9]{2})/'
-            ),
-        ]);
-        dd($request->input());
-    }
-    */
-
-    public function sign_in(Request $request){
-        //$request->merge(['cpf'=> preg_replace('/[^0-9]/is', '', $request->cpf)]);
         $credentials = $request->only('cpf', 'senha');
-
         $credentials['password'] = $credentials['senha'];
+        unset($credentials['senha']);
 
-//        unset($credentials['senha']);
-
-//        Log::info($credentials);
-
-
-        if (Auth::attempt([
-            "cpf" => $credentials["cpf"],
-            "password" => $credentials["senha"]
-        ])) {
+        if (Auth::attempt($credentials)) {
             return redirect('/');
         }
 
         return view('login', ['errors' => true, 'cpf' => $request->cpf]);
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('/login');
     }
 }
