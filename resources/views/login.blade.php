@@ -5,6 +5,9 @@
 @section('body')
     <form class="formLogin" action="{{ route('login.sign_in') }}" method="POST">
         @csrf
+        @php
+            $cpf_redirect = session()->get('cpf')
+        @endphp
         <div class="cardLogin">
             <div>
                 <img src="{{ asset('imagens/logo.png') }}" class="logoLogin">
@@ -13,7 +16,7 @@
 
             <div class="informacoesLogin">
                 <label>Usuário</label>
-                <input type="text" name="cpf" placeholder="Digite seu CPF" required value="{{$cpf ?? ''}}">
+                <input type="text" name="cpf" placeholder="Digite seu CPF" required value="{{$cpf ?? $cpf_redirect ?? ''}}">
             </div>
 
             <div class="informacoesLogin">
