@@ -35,6 +35,8 @@ Route::middleware(['isUser', 'Proprietario'])->group(function () {
 Route::middleware(['isUser'])->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('main.index');
 
+    Route::get("/logout", [LoginController::class, 'logout'])->name("login.logout");
+
     Route::prefix("/admin")->group(function (){
         Route::get("/add-colaborador", function (){
             echo "<h1>Adicionar Colaborador<h1>";

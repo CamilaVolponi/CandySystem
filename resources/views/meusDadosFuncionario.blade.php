@@ -15,7 +15,7 @@
             <br>
             <p>Cargo: ~CARGO~</p>
 
-            <a href="#"><button class="logout">Logout</button></a>
+            <a href="{{route("login.logout")}}"><button class="logout">Logout</button></a>
         </fieldset>
         <fieldset class="dadosEmpresa">
             <legend class="tituloVisualizar">Dados da empresa</legend>
