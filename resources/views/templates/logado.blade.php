@@ -45,6 +45,12 @@
                             Área da empresa
                         </a>
                     </li>
+                    <li>
+                        <a href="{{route("login.logout")}}">
+                            <img src="{{ asset('imagens/logout.png') }}" class="iconeMenu">
+                            Logout
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </aside>

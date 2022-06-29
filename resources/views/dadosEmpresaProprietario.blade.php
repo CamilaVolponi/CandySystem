@@ -5,7 +5,7 @@
 @section('content')
 	<main>
         <fieldset class="dadosEmpresa">
-            <legend class="tituloVisualizar">Dados da empresa:</legend>
+            <legend class="tituloVisualizar">Dados da empresa</legend>
 
             <p>Nome da empresa: ~NOME~ </p>
             <p>CNPJ: ~CNPJ~ </p>

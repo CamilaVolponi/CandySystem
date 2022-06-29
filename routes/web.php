@@ -7,6 +7,7 @@ use App\Http\Controllers\MeusDadosController;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\RelatoriosController;
+use \App\Http\Controllers\EmpresaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,10 @@ Route::middleware(['isUser', 'Proprietario'])->group(function () {
     Route::prefix("meus-dados")->group(function(){
         Route::get('/', [MeusDadosController::class, 'index'])->name('meusDados.index');
         Route::get('/create', [MeusDadosController::class, 'create'])->name('funcionario.create');
+    });
+
+    Route::prefix("dadosEmpresa")->group(function(){
+        Route::get('/', [EmpresaController::class, 'index'])->name('dadosEmpresa.index');
     });
 });
 
