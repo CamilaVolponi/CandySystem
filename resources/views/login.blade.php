@@ -26,7 +26,7 @@
             @endif
 
             <button type="submit" class="informacoesLogin">ENTRAR</button>
-            <a href="telaCadastro.html" class="informacoesLogin">Não possui cadastro?</a>
+            <a href={{ route("cadastro.index") }} class="informacoesLogin">Não possui cadastro?</a>
         </div>
         <p class="copyright">&copy; Copyright Candy System</p>
     </form>

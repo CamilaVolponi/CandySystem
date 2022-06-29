@@ -25,15 +25,12 @@ Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::post('/login', [LoginController::class, 'sign_in'])->name('login.sign_in');
 
 Route::get('/cadastro', [CadastroController::class, 'index'])->name('cadastro.index');
+Route::post('/cadastro', [CadastroController::class, 'store']);
 
 Route::middleware(['isUser', 'Proprietario'])->group(function () {
-    Route::prefix("meus-dados")->group(function(){
-        Route::get('/', [MeusDadosController::class, 'index'])->name('meusDados.index');
-        Route::get('/create', [MeusDadosController::class, 'create'])->name('funcionario.create');
-    });
-
     Route::prefix("dadosEmpresa")->group(function(){
         Route::get('/', [EmpresaController::class, 'index'])->name('dadosEmpresa.index');
+        Route::get('/create', [EmpresaController::class, 'create'])->name('funcionario.create');
     });
 });
 
@@ -68,8 +65,6 @@ Route::middleware(['isUser'])->group(function () {
         Route::get('/create', [ProdutosController::class, 'create'])->name('produtos.create');
         Route::get('/show/{id}', [ProdutosController::class, 'show'])->name('produtos.show');
     });
-
-    Route::get('/receitas', [ReceitasController::class, 'index'])->name('receitas.index');
 
     Route::get('/relatorios', [RelatoriosController::class, 'index'])->name('relatorios.index');
 });

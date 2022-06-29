@@ -11,8 +11,8 @@
     </header>
 
     <main>
-        <form class="formCadastro" action="#">
-
+        <form class="formCadastro" method="POST">
+        @csrf
             <div class="cardCadastro">
                 <p>Informações da confeitaria</p>
                 <div class="informacoesCadastro">
@@ -43,7 +43,7 @@
 
                 <div class="informacoesCadastro">
                     <label>Telefone</label>
-                    <input type="text" name="Telefone" placeholder="Digite seu telefone" required>
+                    <input type="text" name="telefone" placeholder="Digite seu telefone" required>
                 </div>
 
                 <div class="informacoesCadastro">
@@ -58,9 +58,6 @@
 
                 <button class="informacoesLogin">Cadastrar</button>
             </div>
-
-
-
         </form>
     </main>
 
