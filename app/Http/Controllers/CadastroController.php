@@ -45,7 +45,6 @@ class CadastroController extends Controller
         }
 
         if($sucess){
-            DB::commit();
             return redirect('login')->with(["cpf" => $request->cpf]);
         } else {
             return redirect("cadastro")->with(["error" => $error])->withInput($request->input);
