@@ -45,7 +45,11 @@ Route::middleware(['isUser'])->group(function () {
         Route::get('/', [MeusDadosController::class, 'index'])->name('meusDados.index');
     });
 
-    Route::prefix("pedidos")->group(function(){
+    Route::prefix("dadosEmpresa")->group(function(){
+        Route::get('/', [EmpresaController::class, 'index'])->name('dadosEmpresa.index');
+    });
+
+    Route::prefix("/pedidos")->group(function(){
         Route::get('/', [PedidosController::class, 'index'])->name('pedidos.index');
         Route::get('/create', [PedidosController::class, 'create'])->name('pedidos.create');
         Route::get('/edit/{id}', [PedidosController::class, 'edit'])->name('pedidos.edit');

@@ -39,6 +39,12 @@
                             Meus Dados
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route("dadosEmpresa.index") }}">
+                            <img src="{{ asset('imagens/empresa.png') }}" class="iconeMenu">
+                            Área da empresa
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </aside>
