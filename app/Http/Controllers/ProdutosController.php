@@ -13,15 +13,15 @@ class ProdutosController extends Controller
     public function index(Request $request){
         $empresa_id = auth()->user()->getEmpresa()->id;
         $produtos = Produto::where("empresa_id", $empresa_id)->get();
-        return view('produtos',compact('produtos'));
+        return view('produtos/index',compact('produtos'));
     }
 
     public function create(Request $request){
-        return view('produtos/produtosInserir');
+        return view('produtos/inserir');
     }
 
     public function show(Request $request, $id){
-        return view('produtos/produtosVisualizar', Produto::getDadosVisualizacaoProduto($id));;
+        return view('produtos/visualizar', Produto::getDadosVisualizacaoProduto($id));;
     }
 
 //    public function show($id){

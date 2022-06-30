@@ -23,7 +23,7 @@ class Pedido extends Model
         //"hora_entrega" => "datetime:H:i"
     ];
 
-    public static function getDadosVisualizacaoPedido($id) : array{
+    public static function getDadosVisualizacao($id) : array{
         $pedido_find = Pedido::find($id);
         $pedido = $pedido_find->toArray();
         $cliente_find = $pedido_find->cliente()->first();

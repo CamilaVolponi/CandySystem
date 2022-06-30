@@ -10,10 +10,10 @@ class EmpresaController extends Controller
     public function index(Request $request){
         if(auth()->user()->cargo == \App\Enums\TipoCargo::PROPRIETARIO){
             $funcionarios = Funcionario::all();
-            return view('dadosEmpresaProprietario', compact('funcionarios'));
+            return view('empresaProprietario/index', compact('funcionarios'));
         } else if(auth()->user()->cargo == \App\Enums\TipoCargo::FUNCIONARIO){
             $funcionarios = Funcionario::all();
-            return view('dadosEmpresaFuncionario', compact('funcionarios'));
+            return view('empresaFuncionario/index', compact('funcionarios'));
         }
 //        return view('dadosEmpresa');
     }

@@ -16,7 +16,7 @@ class MeusDadosController extends Controller
     }
 
     public function create(Request $request){
-        return view('meusDadosProprietario/meusDadosInserir');
+        return view('empresaProprietario/inserir');
     }
 
     public function endereco(Request $request){

@@ -25,10 +25,10 @@ Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::post('/login', [LoginController::class, 'sign_in'])->name('login.sign_in');
 
 Route::get('/cadastro', [CadastroController::class, 'index'])->name('cadastro.index');
-Route::post('/cadastro', [CadastroController::class, 'store']);
+Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');
 
 Route::middleware(['isUser', 'Proprietario'])->group(function () {
-    Route::prefix("dadosEmpresa")->group(function(){
+    Route::prefix("dados-empresa")->group(function(){
         Route::get('/', [EmpresaController::class, 'index'])->name('dadosEmpresa.index');
         Route::get('/create', [EmpresaController::class, 'create'])->name('funcionario.create');
     });
@@ -39,23 +39,22 @@ Route::middleware(['isUser'])->group(function () {
 
     Route::get("/logout", [LoginController::class, 'logout'])->name("login.logout");
 
-    Route::prefix("/admin")->group(function (){
-        Route::get("/add-colaborador", function (){
-            echo "<h1>Adicionar Colaborador<h1>";
-        })->name("admin.add-colaborator");
-    });
-
     Route::prefix("meus-dados")->group(function(){
         Route::get('/', [MeusDadosController::class, 'index'])->name('meusDados.index');
     });
 
-    Route::prefix("dadosEmpresa")->group(function(){
+    Route::prefix("dados-empresa")->group(function(){
         Route::get('/', [EmpresaController::class, 'index'])->name('dadosEmpresa.index');
     });
 
     Route::prefix("/pedidos")->group(function(){
         Route::get('/', [PedidosController::class, 'index'])->name('pedidos.index');
+
         Route::get('/create', [PedidosController::class, 'create'])->name('pedidos.create');
+        Route::post('/create', [PedidosController::class, 'store']);
+        Route::get('/create/getCliente', [PedidosController::class, 'getCliente'])->name("pedidos.get.cliente");
+
+
         Route::get('/edit/{id}', [PedidosController::class, 'edit'])->name('pedidos.edit');
         Route::get('/show/{id}', [PedidosController::class, 'show'])->name('pedidos.show');
     });

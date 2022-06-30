@@ -4,22 +4,36 @@
 
 @section('content')
 	<main>
-        @isset($data)
-            <h1>{{$data["title"]}}</h1>
-            @isset($data["id"])
-                <p>{{$data["id"]}}</p>
-            @endisset
-        @endisset
-
         <p class="titulo">INSERIR PEDIDO</p>
 
-        <form class="formModalInserirPedido">
+        <script>
+            async function getClient(){
+                let cpf = document.querySelector("input[name='cpf']").value
+                if (!cpf) return;
+
+                const url = `{{route("pedidos.get.cliente")}}?cpf=${cpf}`;
+
+                const rawResponse = await fetch(url);
+                const { existe, cliente } = await rawResponse.json();
+                console.log("=> content:", cliente);
+                if(existe){
+                    let nome = document.querySelector("input[name='nomeCliente']");
+                    let telefone = document.querySelector("input[name='telefoneCliente']");
+
+                    nome.value = cliente.nome;
+                    telefone.value = cliente.telefone;
+                }
+                console.log("=> cpf:", cpf);
+            }
+        </script>
+        <form class="formModalInserirPedido" method="POST">
             <!--div de dados do cliente-->
             <fieldset>
                 <legend class="subtitulo">Informações do Cliente</legend>
 
-
-                <label>CPF: <input type="text" name="nomeCliente" required></label><button class="buscarClientes"><img class="imgBuscarClientes" src="{{ asset("imagens/busca.png") }}">  Buscar cliente</button>
+                <label>CPF: <input type="text" name="cpf" required></label>
+                <button onclick="getClient()" class="buscarClientes">
+                    <img class="imgBuscarClientes" src="{{ asset("imagens/busca.png") }}">  Buscar cliente</button>
                 <br><br>
                 <label>Nome: <input type="text" name="nomeCliente" required></label>
                 <br><br>
@@ -60,11 +74,23 @@
                 </label>
             </fieldset>
 
+
+            <script>
+                function handleClick(event){
+                    // event.preventDefault();
+                    let prod = document.getElementById("produto-1").cloneNode(true);
+
+                    let body = document.getElementById("produtos-body");
+                    prod.setAttribute("id", `produto-${body.childElementCount+1}`);
+                    body.append(prod);
+                    console.log(body.childElementCount)
+                }
+            </script>
             <!--div de produtos-->
             <fieldset>
                 <legend class="subtitulo">Produtos</legend>
 
-                <button class="inserirProdutoPedido">Inserir produto</button>
+                <button onclick="handleClick()" class="inserirProdutoPedido">Adicionar produto</button>
 
                 <table class="tabelaInserirPedido">
                     <thead>
@@ -74,10 +100,18 @@
                         <th>Ações</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>Pão</td>
-                        <td>2</td>
+                    <tbody id="produtos-body">
+                    <tr id="produto-1">
+                        <td>
+                            <select>
+                                @foreach($produtos as $produto)
+                                    <option>{{ $produto->nome }}</option>
+                                @endforeach
+                            </select>
+                        </td>
+                        <td>
+                            <input type="number" name="quantidade" min="1" required>
+                        </td>
                         <td>
                             <div class="dropdown">
                                 <button class="dropbtn"><img class="imgAcoes" src="{{ asset("imagens/acoes.png") }}"></button>
@@ -94,37 +128,6 @@
             <button class="cadastroPedido">Cadastrar pedido</button>
         </form>
 	</main>
-
-    <!-- modal inserir produto no pedido -->
-    <div id="modal-inserir-produto-pedido" class="modal-container">
-        <div class="modalInserirProdutoPedido">
-            <button class="fechar">X</button>
-            <p class="tituloModal">Adicionar Produto</p>
-
-            <div>
-                <label>Produto:
-                    <select>
-                        <option>Brigadeiro</option>
-                        <option>Pudim</option>
-                    </select></label>
-            </div>
-            <br>
-            <div>
-                <label>Quantidade: <input type="number" name="quantidade" min="1" required></label>
-            </div>
-
-            <button class="inserirProdutoEmPedido">Cadastrar pedido</button>
-        </div>
-    </div>
-
-    <!-- modal excluir pedido -->
-    <div id="modal-excluir-pedido" class="modal-container">
-        <div class="modalExcluirPedido">
-            <button class="fechar">X</button>
-            <h1 class="centralizar">Confirma a exclusão deste pedido?</h1>
-            <p class="centralizar"><a href="#">Sim</a>|<a href="#">Não</a></p>
-        </div>
-    </div>
 
     <!-- modal editar produto do pedido -->
     <div id="modal-editar-produto-pedido" class="modal-container">
