@@ -51,7 +51,7 @@ Route::middleware(['isUser'])->group(function () {
         Route::get('/', [PedidosController::class, 'index'])->name('pedidos.index');
 
         Route::get('/create', [PedidosController::class, 'create'])->name('pedidos.create');
-        Route::post('/create', [PedidosController::class, 'store']);
+        Route::post('/create', [PedidosController::class, 'store'])->name('pedidos.store');
         Route::get('/create/getCliente', [PedidosController::class, 'getCliente'])->name("pedidos.get.cliente");
 
 

@@ -17,7 +17,8 @@ class ProdutosController extends Controller
     }
 
     public function create(Request $request){
-        return view('produtos/inserir');
+        $unidadesDeMedida = TipoUnidadeDeMedida::cases();
+        return view('produtos/inserir', compact('unidadesDeMedida'));
     }
 
     public function show(Request $request, $id){

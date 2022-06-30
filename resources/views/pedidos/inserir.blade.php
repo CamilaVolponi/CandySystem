@@ -8,6 +8,7 @@
 
         <script>
             async function getClient(){
+
                 let cpf = document.querySelector("input[name='cpf']").value
                 if (!cpf) return;
 
@@ -20,14 +21,103 @@
                     let nome = document.querySelector("input[name='nomeCliente']");
                     let telefone = document.querySelector("input[name='telefoneCliente']");
 
+                    let cep = document.querySelector("input[name='cep']");
+                    let rua = document.querySelector("input[name='rua']");
+                    let bairro = document.querySelector("input[name='bairro']");
+                    let cidade = document.querySelector("input[name='cidade']");
+                    let numero = document.querySelector("input[name='numero']");
+                    let complemento = document.querySelector("input[name='complemento']");
+                    let referencia = document.querySelector("input[name='referencia']");
+
                     nome.value = cliente.nome;
                     telefone.value = cliente.telefone;
+
+                    cep.value = cliente.endereco.cep;
+                    rua.value = cliente.endereco.rua;
+                    bairro.value = cliente.endereco.bairro;
+                    cidade.value = cliente.endereco.cidade;
+                    numero.value = cliente.endereco.numero;
+                    if(cliente.endereco.complemento) complemento.value = cliente.endereco.complemento;
+                    if(cliente.endereco.referencia) referencia.value = cliente.endereco.referencia;
+
                 }
                 console.log("=> cpf:", cpf);
             }
+            async function enviaDados(event) {
+                event.preventDefault();
+
+                let _token = document.querySelector("input[type='hidden']").value;
+                let cpf = document.querySelector("input[name='cpf']").value
+                let nome = document.querySelector("input[name='nomeCliente']").value;
+                let telefone = document.querySelector("input[name='telefoneCliente']").value;
+
+                let cep = document.querySelector("input[name='cep']").value;
+                let rua = document.querySelector("input[name='rua']").value;
+                let bairro = document.querySelector("input[name='bairro']").value;
+                let cidade = document.querySelector("input[name='cidade']").value;
+                let numero = document.querySelector("input[name='numero']").value;
+                let complemento = document.querySelector("input[name='complemento']").value;
+                let referencia = document.querySelector("input[name='referencia']").value;
+
+                let data_entrega = document.querySelector("input[name='data']").value;
+                let hora_entrega = document.querySelector("input[name='horario']").value;
+                let forma_pagamento = document.querySelector("select[name='forma_pagamento']").value;
+
+                const url = `{{route("pedidos.store")}}`;
+
+                const getAllProdutos = () => {
+
+                    let body = document.getElementById("produtos-body");
+
+                    let produtosHTML = [...document.getElementById("produtos-body").children];
+                    let nome, preco, id, quantidade;
+                    let produtos = produtosHTML.map((item, index) => {
+                        [id, preco, nome] = item.querySelector("[name='produto']").value.split(",")
+                        quantidade = item.querySelector("[name='quantidade']").value
+                        return {
+                            id,
+                            nome,
+                            preco,
+                            quantidade,
+                        }
+                    })
+
+                    return produtos;
+                }
+
+                const data = {
+                    cliente: {
+                        cpf, nome, telefone, cep,
+                        rua, bairro, cidade, numero,
+                        complemento, referencia
+                    },
+                    pedido : {
+                        data_entrega,
+                        hora_entrega,
+                        forma_pagamento,
+                        produtos: getAllProdutos(),
+                    }
+                }
+
+                // console.log(data);
+                // return;
+
+                const rawResponse = await fetch(url, {
+                    method: "post",
+                    body: JSON.stringify(data),
+                    headers: new Headers({
+                        'Content-Type': 'application/json',
+                        "X-CSRF-TOKEN": _token
+                    })
+                });
+                // const { existe, cliente } = await rawResponse.json();
+                console.log(await rawResponse.json())
+                console.log("Enviei os dados!!!!")
+            }
         </script>
-        <form class="formModalInserirPedido" method="POST">
+        <form onsubmit="enviaDados(event)" class="formModalInserirPedido" method="POST">
             <!--div de dados do cliente-->
+            @csrf
             <fieldset>
                 <legend class="subtitulo">Informações do Cliente</legend>
 
@@ -51,9 +141,9 @@
 
                     <label>Numero: <input type="text" name="numero" required></label>
                     <br><br>
-                    <label>Complemento: <input type="text" name="complemento" required></label>
+                    <label>Complemento: <input type="text" name="complemento"></label>
 
-                    <label>Referencia: <input type="text" name="referencia" required></label>
+                    <label>Referencia: <input type="text" name="referencia"></label>
                 </fieldset>
             </fieldset>
 
@@ -66,10 +156,10 @@
                 <label>Para o horário: <input type="time" name="horario" required></label>
 
                 <label>Forma de pagamento:
-                    <select>
-                        <option>Crédito</option>
-                        <option>Dinheiro</option>
-                        <option>PIX</option>
+                    <select name="forma_pagamento">
+                        @foreach($formasPagamento as $formaPagamento)
+                            <option>{{ $formaPagamento->value }}</option>
+                        @endforeach
                     </select>
                 </label>
             </fieldset>
@@ -77,7 +167,7 @@
 
             <script>
                 function handleClick(event){
-                    // event.preventDefault();
+                    event.preventDefault();
                     let prod = document.getElementById("produto-1").cloneNode(true);
 
                     let body = document.getElementById("produtos-body");
@@ -90,7 +180,7 @@
             <fieldset>
                 <legend class="subtitulo">Produtos</legend>
 
-                <button onclick="handleClick()" class="inserirProdutoPedido">Adicionar produto</button>
+                <button onclick="handleClick(event)" class="inserirProdutoPedido">Adicionar produto</button>
 
                 <table class="tabelaInserirPedido">
                     <thead>
@@ -103,9 +193,9 @@
                     <tbody id="produtos-body">
                     <tr id="produto-1">
                         <td>
-                            <select>
+                            <select name="produto">
                                 @foreach($produtos as $produto)
-                                    <option>{{ $produto->nome }}</option>
+                                    <option value="{{  $produto->id }},{{ $produto->preco }},{{ $produto->nome }}">{{ $produto->nome }}</option>
                                 @endforeach
                             </select>
                         </td>
@@ -116,7 +206,6 @@
                             <div class="dropdown">
                                 <button class="dropbtn"><img class="imgAcoes" src="{{ asset("imagens/acoes.png") }}"></button>
                                 <div class="dropdown-content">
-                                    <a href="#" class="EditarProdutoPedido">Editar</a>
                                     <a href="#" class="ExcluirProdutoPedido">Excluir</a>
                                 </div>
                             </div>
@@ -125,29 +214,9 @@
                     </tbody>
                 </table>
             </fieldset>
-            <button class="cadastroPedido">Cadastrar pedido</button>
+            <button onclick="enviaDados(event)" class="cadastroPedido">Cadastrar pedido</button>
         </form>
 	</main>
-
-    <!-- modal editar produto do pedido -->
-    <div id="modal-editar-produto-pedido" class="modal-container">
-        <div class="modalEditarProdutoPedido">
-            <button class="fechar">X</button>
-            <div>
-                <label>Produto:
-                    <select>
-                        <option>Brigadeiro</option>
-                        <option>Pudim</option>
-                    </select></label>
-            </div>
-            <br>
-            <div>
-                <label>Quantidade: <input type="number" name="quantidade" min="1" required></label>
-            </div>
-
-            <button class="editarProdutoEmPedido">Editar pedido</button>
-        </div>
-    </div>
 
     <!-- modal excluir produto do pedido -->
     <div id="modal-excluir-produto-pedido" class="modal-container">

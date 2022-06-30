@@ -15,23 +15,22 @@
                 <label>Preço do produto: <input type="text" name="precoProduto" required></label>
             </fieldset>
 
+            <script>
+                function handleClick(event){
+                    // event.preventDefault();
+                    let prod = document.getElementById("ingredientes-1").cloneNode(true);
+
+                    let body = document.getElementById("ingredientes-body");
+                    prod.setAttribute("id", `ingredientes-${body.childElementCount+1}`);
+                    body.append(prod);
+                    console.log(body.childElementCount)
+                }
+            </script>
             <!--div de ingrediente-->
             <fieldset>
                 <legend class="subtitulo">Ingrediente</legend>
-                <form>
-                    <div>
-                        <label>Nome do ingrediente: <input type="text" name="nomeIngrediente" required></label>
-                    </div>
-                    <br>
-                    <div>
-                        <label>Quantidade: <input type="text" name="quantidadeIngrediente" required></label>
-                    </div>
-                    <br>
-                    <div>
-                        <label>Unidade de medida: <input type="text" name="unidadeMedidaIngrediente" required></label>
-                        <button class="cadastroIngrediente">Inserir ingrediente</button>
-                    </div>
-                </form>
+
+                <button class="cadastroIngrediente">Inserir ingrediente</button>
                 <table class="tabelaInserirProduto">
                     <thead>
                     <tr>
@@ -41,48 +40,44 @@
                         <th>Ações</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>Ovo</td>
-                        <td>3</td>
-                        <td>Unidade</td>
-                        <td>
-                            <div class="dropdown">
-                                <button class="dropbtn"><img class="imgAcoes" src="{{ asset("imagens/acoes.png") }}"></button>
-                                <div class="dropdown-content">
-                                    <a href="#" class="EditarIngrediente">Editar</a>
-                                    <a href="#" class="ExcluirIngrediente">Excluir</a>
+                    <tbody id="ingredientes-body">
+                        <tr id="ingredientes-1">
+                            <td><input type="text" name="nomeIngrediente" required></td>
+                            <td><input type="number" name="quantidadeIngrediente" min="1" required></td>
+                            <td><select name="tipoUnidadeMedida">
+                                @foreach($unidadesDeMedida as $unidadeDeMedida)
+                                    <option>{{ $unidadeDeMedida->value }}</option>
+                                @endforeach
+                            </select></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropbtn"><img class="imgAcoes" src="{{ asset("imagens/acoes.png") }}"></button>
+                                    <div class="dropdown-content">
+                                        <a href="#" class="ExcluirIngrediente">Excluir</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Açucar</td>
-                        <td>2</td>
-                        <td>Xícara de chá</td>
-                        <td>
-                            <div class="dropdown">
-                                <button class="dropbtn"><img class="imgAcoes" src="{{ asset("imagens/acoes.png") }}"></button>
-                                <div class="dropdown-content">
-                                    <a href="#" class="EditarIngrediente">Editar</a>
-                                    <a href="#" class="ExcluirIngrediente">Excluir</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </fieldset>
 
+            <script>
+                function handleClick(event){
+                    // event.preventDefault();
+                    let prod = document.getElementById("passo-1").cloneNode(true);
+
+                    let body = document.getElementById("passo-body");
+                    prod.setAttribute("id", `passo-${body.childElementCount+1}`);
+                    body.append(prod);
+                    console.log(body.childElementCount)
+                }
+            </script>
             <!--div de preparo-->
             <fieldset>
                 <legend class="subtitulo">Modo de preparo</legend>
-                <form>
-                    <div>
-                        <label>Passo: <textarea cols="125" rows="5" id="passo"></textarea></label>
-                        <button class="cadastroPreparo">Inserir preparo</button>
-                    </div>
-                </form>
+
+                <button class="cadastroPreparo">Inserir preparo</button>
                 <div>
                     <table class="tabelaInserirProduto">
                         <thead>
@@ -92,41 +87,14 @@
                             <th>Ações</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
+                        <tbody id="passo-body">
+                        <tr id="passo-1">
                             <td>1</td>
-                            <td>Bata todos os ingredientes no liquidifcador.</td>
+                            <td><textarea cols="125" rows="3" id="passo"></textarea></td>
                             <td>
                                 <div class="dropdown">
                                     <button class="dropbtn"><img class="imgAcoes" src="{{ asset("imagens/acoes.png") }}"></button>
                                     <div class="dropdown-content">
-                                        <a href="#" class="EditarPasso">Editar</a>
-                                        <a href="#" class="ExcluirPasso">Excluir</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Coloque em uma forma untada e enfarinhada.</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="dropbtn"><img class="imgAcoes" src="{{ asset("imagens/acoes.png") }}"></button>
-                                    <div class="dropdown-content">
-                                        <a href="#" class="EditarPasso">Editar</a>
-                                        <a href="#" class="ExcluirPasso">Excluir</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Leve ao forno preaquecido e deixe assar por cerca de 40 minutos.</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="dropbtn"><img class="imgAcoes" src="{{ asset("imagens/acoes.png") }}"></button>
-                                    <div class="dropdown-content">
-                                        <a href="#" class="EditarPasso">Editar</a>
                                         <a href="#" class="ExcluirPasso">Excluir</a>
                                     </div>
                                 </div>
