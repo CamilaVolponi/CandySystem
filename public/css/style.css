@@ -107,42 +107,6 @@ footer{
 }
 /*possui em todas as telas - fim*/
 
-
-/*busca - inicio*/
-.search-container{
-    padding-top: 3%;
-    width: 490px;
-    display: block;
-}
-
-input::placeholder {
-    color: white;
-}
-
-input#search-bar{
-    background-color: #E53471;
-    color: white;
-    margin: 0 auto;
-    width: 100%;
-    height: 45px;
-    padding: 0 20px;
-    font-size: 1rem;
-    border: 1px solid #3F3F46;
-    outline: none;
-    border-radius: 10px;
-}
-
-.search-icon{
-    position: relative;
-    float: right;
-    width: 40px;
-    height: 40px;
-    top: -45px;
-    right: -35px;
-    background-color: #E53471;
-}
-/*busca - fim*/
-
 /*tabelas - incio*/
 
 .tabela {

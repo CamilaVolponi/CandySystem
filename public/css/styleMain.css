@@ -26,6 +26,13 @@
 
 .notificacoesPedidos p{
     text-decoration: none;
-    font-size: 20px;
+    font-size: 30px;
     padding: 10px;
+    margin-left: 13%;
+}
+
+.visualizarPedido{
+    margin-left: 40%;
+    color: #e53471;
+    font-size: 20px;
 }

@@ -4,10 +4,7 @@
 
 @section('content')
 	<main>
-        <form class="search-container">
-            <input type="text" id="search-bar" placeholder="Busca produto">
-            <a href="#"><img class="search-icon" src="./imagens/busca.png"></a>
-        </form>
+        <p class="titulo">PRODUTOS DA MINHA EMPRESA</p>
 
         <table class="tabela">
             <thead>
@@ -35,7 +32,7 @@
             </tbody>
         </table>
 
-        <a href="{{ route('produtos.create') }}"><button class="botaoProdutos">Inserir Produto</button></a>
+        <a href="{{ route('produtos.index') }}"><button class="botaoProdutos">Inserir Produto</button></a>
     </main>
 
     <!-- modal editar produto -->

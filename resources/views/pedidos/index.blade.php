@@ -4,10 +4,7 @@
 
 @section('content')
 	<main>
-        <form class="search-container">
-            <input type="text" id="search-bar" placeholder="Buscar cliente">
-            <a href="#"><img class="search-icon" src="./imagens/busca.png"></a>
-        </form>
+        <p class="titulo">PEDIDOS DA MINHA EMPRESA</p>
 
         <table class="tabela">
             <thead>

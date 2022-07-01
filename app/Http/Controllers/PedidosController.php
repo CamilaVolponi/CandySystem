@@ -27,33 +27,33 @@ class PedidosController extends Controller
         return view('pedidos/inserir', compact('produtos','formasPagamento'));
     }
     public function store(Request $request){
-        $cpf = $request->only("cliente")["cliente"]["cpf"];
+        $dadosRequest = $request->all();
+        $dadosCliente = json_decode($dadosRequest["cliente"], true);
+        $dadosPedido = json_decode($dadosRequest["pedido"], true);
+
+        $data = [
+            "sucess" => false
+        ];
+
+        $cpf = $dadosCliente["cpf"];
         $cliente = Cliente::where("cpf", $cpf)->get()->first();
         $funcionario = auth()->user();
 
-        $data = $request->all();
-
-//        if(1 == 0){
+        cadastrar_pedido:
         if($cliente){
             // vericar se informações foram atualizadas
             // cpf é inalterável - já garantido pela busca de cliente
             DB::beginTransaction();
-            $dataPedido = $request->only("pedido")["pedido"];
-            $dataPedido = array_merge($dataPedido, [
-               "cliente_id" => $cliente->id,
-               "empresa_id" => $funcionario->getEmpresa()->id,
+            $dadosPedido = array_merge($dadosPedido, [
+                "cliente_id" => $cliente->id,
+                "empresa_id" => $funcionario->getEmpresa()->id,
             ]);
 
-            $produtos = $dataPedido["produtos"];
-            $countProduto = 0; // debug
+            $produtos = $dadosPedido["produtos"];
             try{
-                $pedido = $cliente->pedidos()->create($dataPedido);
+                $pedido = $cliente->pedidos()->create($dadosPedido);
                 try{
                     foreach ($produtos as $produto){
-                        $countProduto++;
-                        if($produto["id"] == null || $produto["preco"] == null){
-                            throw new \Exception("Id ou preço nulos", 123);
-                        }
                         $pedido->produtos()->attach($produto["id"], [
                             "quantidade" => $produto["quantidade"],
                             "preco" => $produto["preco"],
@@ -63,47 +63,41 @@ class PedidosController extends Controller
                     $data = array_merge($data, [
                         "success" => true
                     ]);
-                } catch (\Exception $e){
+                    // cadastro de pedido concluído
+                }catch (QueryException $e){
                     DB::rollBack();
                     $data = array_merge($data, [
                         "success" => false,
                         "error" => $e,
-                        "produto" => $produtos[$countProduto],
-                        "produtos" => $produtos,
                     ]);
+                    // erro ao adicionar produto
                 }
-//                catch (QueryException $e){
-//                    DB::rollBack();
-//                    $data = array_merge($data, [
-//                        "success" => false,
-//                        "error" => $e,
-//                        "pedido" => $produtos[$countProduto]
-//                    ]);
-//                }
             }catch (QueryException $e){
                 DB::rollBack();
                 $data = array_merge($data, [
                     "success" => false,
                     "error" => $e,
-                    "data_pedido" => $dataPedido
+                    "data_pedido" => $dadosPedido
                 ]);
+                // erro em cadastrar pedido
             }
-//            dd($pedido->produtos()->get());
-
-//            DB::rollBack();
         }else{
             // cadastro novo
-            $data = array_merge($data, [
-                "success" => false,
-            ]);
+            $cliente = Cliente::create($dadosCliente);
+            $cliente->endereco()->create($dadosCliente["endereco"]);
+            goto cadastrar_pedido;
         }
 
-        $data = array_merge($data, [
-            "isNull" => $cliente == null,
-            "cpfIsNull" => $cpf == null,
-        ]);
-
-        return response()->json($request->all(), 200);
+        if($data["success"]){
+            return redirect('/')->with(["msg" => "pedido cadastrado com sucesso"]);
+        }else{
+            return redirect("pedidos/create")->with([
+                "error" => $data["error"],
+                "cliente" => $dadosCliente,
+                "pedido" => $dadosPedido,
+                "produtos" => Produto::all()
+            ]);
+        }
     }
     public function getCliente(Request $request){
         $cpf = $request->only("cpf");

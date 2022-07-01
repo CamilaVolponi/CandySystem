@@ -1,17 +1,11 @@
-.dadosEmpresa{
+.meusDados{
     margin-top: 3%;
     margin-right: 5%;
     border: 3px solid #E53471;
     padding: 10px;
 }
 
-.tituloVisualizar{
-    color: #E53471;
-    font-size: 20px;
-    margin-bottom: 1%;
-    margin-top: 1%;
-}
-.logout{
+.atualizarFuncionario{
     margin-top: 2%;
     margin-left: 84%;
     width: 10%;
@@ -22,27 +16,24 @@
     border: 1px;
 }
 
-.inserirFuncionario{
-    margin-top: 2%;
-    margin-left: 84%;
-    width: 10%;
-    background-color: #E53471;
-    border-radius: 30px;
-    padding: 15px;
-    color: white;
-    border: 1px;
-}
-
-.inserirFuncionario:hover{
-    background-color: #EA5D8E;
-}
-
-.formModalInserirFuncionario label, .formModalEditarFuncionario label{
+.meusDados label{
     width: 20%;
     margin-bottom: 10%;
 }
 
-.formModalInserirFuncionario input, .formModalEditarFuncionario input{
+.meusDados input{
+    border-radius: 5px;
+    width: 60%;
+    height: 10px;
+    padding: 5px;
+}
+
+.formModalEditarFuncionario label{
+    width: 20%;
+    margin-bottom: 10%;
+}
+
+.formModalEditarFuncionario input{
     border-radius: 5px;
     width: 30%;
     height: 10px;

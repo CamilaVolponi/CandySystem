@@ -4,11 +4,11 @@
 
 @section('content')
 	<main>
-        <fieldset class="dadosEmpresa">
-            <legend class="tituloVisualizar">Dados da empresa</legend>
+        <p class="titulo">ÁREA DA EMPRESA</p>
 
-            <p>Nome da empresa: ~NOME~ </p>
-            <p>CNPJ: ~CNPJ~ </p>
+        <fieldset class="dadosEmpresa">
+            <p> Nome da empresa: {{ $empresa["nome"] }} </p>
+            <p>CNPJ: {{ $empresa["cnpj"] }} </p>
             <table class="tabela">
                 <thead>
                 <tr>
@@ -18,20 +18,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Mariazinha Santos</td>
-                    <td>Proprietário</td>
-                    <td>mariazinha.santos@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Paulo Soares</td>
-                    <td>Funcionario</td>
-                    <td>paulo.soares@gmail.com</td>
-                </tr>
+                    @foreach($funcionarios as $funcionario)
+                        <tr>
+                            <td>{{ $funcionario["nome"] }}</td>
+                            <td>{{ $funcionario["cargo"]->value }}</td>
+                            <td>{{ $funcionario["email"] }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </fieldset>
 	</main>
 
-    <link rel="stylesheet" href="{{ asset('css/styleMeusDados.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styleEmpresa.css') }}">
 @endsection

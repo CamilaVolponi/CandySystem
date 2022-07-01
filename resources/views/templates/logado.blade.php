@@ -27,13 +27,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('relatorios.index') }}">
-                            <img src="{{ asset('imagens/relatorio.png') }}" class="iconeMenu">
-                            Relatórios
-                        </a>
-                    </li>
-                    <li>
-{{--                        <a href="{{ //urlMeusDados }}"> --}}
                         <a href="{{ route("meusDados.index") }}">
                             <img src="{{ asset('imagens/meusDados.png') }}" class="iconeMenu">
                             Meus Dados

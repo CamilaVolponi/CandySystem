@@ -31,6 +31,7 @@ Route::middleware(['isUser', 'Proprietario'])->group(function () {
     Route::prefix("dados-empresa")->group(function(){
         Route::get('/', [EmpresaController::class, 'index'])->name('dadosEmpresa.index');
         Route::get('/create', [EmpresaController::class, 'create'])->name('funcionario.create');
+        Route::post('/create', [EmpresaController::class, 'store'])->name('funcionario.store');
     });
 });
 

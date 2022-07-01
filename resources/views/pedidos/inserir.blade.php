@@ -3,9 +3,15 @@
 @section('title', 'Pedidos - Candy System')
 
 @section('content')
-	<main>
+    <main>
         <p class="titulo">INSERIR PEDIDO</p>
+        @php
+            $error = session('error');
+            $cliente = session("cliente") ?? [];
+            $endereco = $cliente["endereco"] ?? [];
+            $pedido = session("pedido") ?? [];
 
+        @endphp
         <script>
             async function getClient(){
 
@@ -67,13 +73,11 @@
 
                 const getAllProdutos = () => {
 
-                    let body = document.getElementById("produtos-body");
-
                     let produtosHTML = [...document.getElementById("produtos-body").children];
                     let nome, preco, id, quantidade;
-                    let produtos = produtosHTML.map((item, index) => {
-                        [id, preco, nome] = item.querySelector("[name='produto']").value.split(",")
-                        quantidade = item.querySelector("[name='quantidade']").value
+                    let produtos = produtosHTML.map((itemProduto, index) => {
+                        [id, preco, nome] = itemProduto.querySelector("[name='produto']").value.split(",")
+                        quantidade = itemProduto.querySelector("[name='quantidade']").value
                         return {
                             id,
                             nome,
@@ -85,34 +89,36 @@
                     return produtos;
                 }
 
-                const data = {
-                    cliente: {
-                        cpf, nome, telefone, cep,
-                        rua, bairro, cidade, numero,
-                        complemento, referencia
-                    },
-                    pedido : {
-                        data_entrega,
-                        hora_entrega,
-                        forma_pagamento,
-                        produtos: getAllProdutos(),
+                let form = document.createElement('form');
+                form.action = `{{route("pedidos.store")}}`;
+                form.method = 'POST';
+                form.style.display = "none"
+
+                const cliente = {
+                    cpf,nome,telefone,
+                    endereco: {
+                        cep, rua, bairro, cidade,
+                        numero, complemento, referencia
                     }
                 }
 
-                // console.log(data);
-                // return;
+                const pedido = {
+                    data_entrega,
+                    hora_entrega,
+                    forma_pagamento,
+                    produtos: getAllProdutos()
+                }
 
-                const rawResponse = await fetch(url, {
-                    method: "post",
-                    body: JSON.stringify(data),
-                    headers: new Headers({
-                        'Content-Type': 'application/json',
-                        "X-CSRF-TOKEN": _token
-                    })
-                });
-                // const { existe, cliente } = await rawResponse.json();
-                console.log(await rawResponse.json())
-                console.log("Enviei os dados!!!!")
+                form.innerHTML = `
+                    <input name="_token" value="${_token}">
+                    <input name="cliente" value='${JSON.stringify(cliente, null, 0)}'>
+                    <input name="pedido" value='${JSON.stringify(pedido, null, 0)}'>
+                `;
+
+                // the form must be in the document to submit it
+                document.body.append(form);
+                form.submit();
+                // test com post
             }
         </script>
         <form onsubmit="enviaDados(event)" class="formModalInserirPedido" method="POST">
@@ -121,66 +127,77 @@
             <fieldset>
                 <legend class="subtitulo">Informações do Cliente</legend>
 
-                <label>CPF: <input type="text" name="cpf" required></label>
+                <label>CPF: <input type="text" name="cpf" required value="{{ $cliente["cpf"] ?? "" }}"></label>
                 <button onclick="getClient()" class="buscarClientes">
                     <img class="imgBuscarClientes" src="{{ asset("imagens/busca.png") }}">  Buscar cliente</button>
                 <br><br>
-                <label>Nome: <input type="text" name="nomeCliente" required></label>
+                <label>Nome: <input type="text" name="nomeCliente" required value="{{ $cliente["nome"] ?? "" }}"></label>
                 <br><br>
-                <label>Telefone: <input type="text" name="telefoneCliente" required></label>
+                <label>Telefone: <input type="text" name="telefoneCliente" required value="{{ $cliente["telefone"] ?? "" }}"></label>
 
                 <fieldset>
                     <legend class="endereco">Endereço</legend>
-                    <label>CEP: <input type="text" name="cep" required></label>
+                    <label>CEP: <input type="text" name="cep" required value="{{ $endereco["cep"] ?? "" }}"></label>
                     <br><br>
-                    <label>Rua: <input type="text" name="rua" required></label>
-
-                    <label>Bairro: <input type="text" name="bairro" required></label>
+                    <label>Rua: <input type="text" name="rua" required  value="{{ $endereco["rua"] ?? "" }}"></label>
+                    <label>Bairro: <input type="text" name="bairro" required  value="{{ $endereco["bairro"] ?? "" }}"></label>
                     <br><br>
-                    <label>Cidade: <input type="text" name="cidade" required></label>
-
-                    <label>Numero: <input type="text" name="numero" required></label>
+                    <label>Cidade: <input type="text" name="cidade" required  value="{{ $endereco["cidade"] ?? "" }}"></label>
+                    <label>Numero: <input type="text" name="numero" required  value="{{ $endereco["numero"] ?? "" }}"></label>
                     <br><br>
-                    <label>Complemento: <input type="text" name="complemento"></label>
-
-                    <label>Referencia: <input type="text" name="referencia"></label>
+                    <label>Complemento: <input type="text" name="complemento"  value="{{ $endereco["complemento"] ?? "" }}"></label>
+                    <label>Referencia: <input type="text" name="referencia"  value="{{ $endereco["referencia"] ?? "" }}"></label>
                 </fieldset>
             </fieldset>
 
             <!--div de dados do Pedido-->
             <fieldset>
                 <legend class="subtitulo">Informações do Pedido</legend>
-
-                <label>Para o dia: <input type="date" name="data" required></label>
-
-                <label>Para o horário: <input type="time" name="horario" required></label>
-
+                <label>Para o dia: <input type="date" name="data" required value="{{ $pedido["data_entrega"] ?? "" }}"></label>
+                <label>Para o horário: <input type="time" name="horario" required value="{{ $pedido["hora_entrega"] ?? "" }}"></label>
                 <label>Forma de pagamento:
                     <select name="forma_pagamento">
                         @foreach($formasPagamento as $formaPagamento)
-                            <option>{{ $formaPagamento->value }}</option>
+                            <option @if(!empty($pedido)  && $formaPagamento == $pedido["forma_pagamento"]) selected @endif >{{ $formaPagamento->value }}</option>
                         @endforeach
                     </select>
                 </label>
             </fieldset>
 
-
             <script>
-                function handleClick(event){
+                function addProduto(event){
                     event.preventDefault();
-                    let prod = document.getElementById("produto-1").cloneNode(true);
-
                     let body = document.getElementById("produtos-body");
-                    prod.setAttribute("id", `produto-${body.childElementCount+1}`);
+                    let prod = document.createElement("tr");
+                    prod.classList.add("produto");
+                    prod.innerHTML = `
+                        <td>
+                            <select name="produto">
+@foreach($produtos as $produto)
+                    <option value="{{  $produto->id }},{{ $produto->preco }},{{ $produto->nome }}">{{ $produto->nome }}</option>
+@endforeach
+                    </select>
+                </td>
+                <td>
+                    <input type="number" name="quantidade" min="1" required>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn"><img class="imgAcoes" src="{{ asset("imagens/acoes.png") }}"></button>
+                                <div class="dropdown-content">
+                                    <a href="#" class="ExcluirProdutoPedido">Excluir</a>
+                                </div>
+                            </div>
+                        </td>
+                    `
                     body.append(prod);
-                    console.log(body.childElementCount)
                 }
             </script>
             <!--div de produtos-->
             <fieldset>
                 <legend class="subtitulo">Produtos</legend>
 
-                <button onclick="handleClick(event)" class="inserirProdutoPedido">Adicionar produto</button>
+                <button onclick="addProduto(event)" class="inserirProdutoPedido">Adicionar produto</button>
 
                 <table class="tabelaInserirPedido">
                     <thead>
@@ -191,11 +208,13 @@
                     </tr>
                     </thead>
                     <tbody id="produtos-body">
-                    <tr id="produto-1">
+                    @if(!(isset($pedido) && $pedido != null && isset($pedido["produtos"]) && !empty($pedido["produtos"])))
+                    @php // quer dizer que deu erro no cadastro do pedido e está voltando do post @endphp
+                    <tr class="produto">
                         <td>
                             <select name="produto">
                                 @foreach($produtos as $produto)
-                                    <option value="{{  $produto->id }},{{ $produto->preco }},{{ $produto->nome }}">{{ $produto->nome }}</option>
+                                    <option value="{{ $produto->id }},{{ $produto->preco }},{{ $produto->nome }}">{{ $produto->nome }}</option>
                                 @endforeach
                             </select>
                         </td>
@@ -211,12 +230,40 @@
                             </div>
                         </td>
                     </tr>
+                    @else
+                        @foreach($pedido["produtos"] as $produto)
+                            <tr class="produto">
+                                <td>
+                                    <select name="produto">
+                                        @foreach($produtos as $produtoI)
+                                            <option
+                                                @if($produto["id"] == $produtoI->id) selected @endif
+                                            value="{{ $produtoI->id }},{{ $produtoI->preco }},{{ $produtoI->nome }}">{{ $produtoI->nome }}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="number" name="quantidade" min="1" required value="{{ $produto["quantidade"] }}">
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="dropbtn"><img class="imgAcoes" src="{{ asset("imagens/acoes.png") }}"></button>
+                                        <div class="dropdown-content">
+                                            <a href="#" class="ExcluirProdutoPedido">Excluir</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
             </fieldset>
-            <button onclick="enviaDados(event)" class="cadastroPedido">Cadastrar pedido</button>
+            <button
+                onclick="enviaDados(event)"
+                class="cadastroPedido">Cadastrar pedido</button>
         </form>
-	</main>
+    </main>
 
     <!-- modal excluir produto do pedido -->
     <div id="modal-excluir-produto-pedido" class="modal-container">

@@ -4,14 +4,6 @@
 
 @section('content')
 	<main>
-{{--        <script>--}}
-{{--            function add(){--}}
-{{--                let main = document.getElementById("main");--}}
-{{--                let firstChild = main.children[0].cloneNode(true);--}}
-{{--                main.append(firstChild);--}}
-{{--            }--}}
-{{--        </script>--}}
-{{--        <button onclick="add()">Add</button>--}}
 		<div id="main">
             @foreach($pedidos as $pedido)
                 @php
@@ -27,8 +19,6 @@
                         <a href="{{ route('pedidos.show', "$pedido->id")}}" class="visualizarPedido">Visualizar</a>
                     </div>
             @endforeach
-
-
 		</div>
 	</main>
 

@@ -4,11 +4,11 @@
 
 @section('content')
 	<main>
-        <fieldset class="dadosEmpresa">
-            <legend class="tituloVisualizar">Dados da empresa</legend>
+        <p class="titulo">ÁREA DA EMPRESA</p>
 
-            <p>Nome da empresa: ~NOME~ </p>
-            <p>CNPJ: ~CNPJ~ </p>
+        <fieldset class="dadosEmpresa">
+            <p class="tituloEmpresa">Nome da empresa: {{ $empresa["nome"] }} </p>
+            <p class="tituloEmpresa">CNPJ: {{ $empresa["cnpj"] }} </p>
             <table class="tabela">
                 <thead>
                 <tr>
@@ -21,40 +21,25 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Mariazinha Santos</td>
-                    <td>Proprietário</td>
-                    <td>123.456.789-00</td>
-                    <td>96865-5963</td>
-                    <td>mariazinha.santos@gmail.com</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
-                            <div class="dropdown-content">
-                                <a href="#" class="editarFuncionario">Editar</a>
-                                <a href="#" class="excluirFuncionario">Excluir</a>
-                                <a href="#" class="tornarProprietario">Tornar proprietário</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Paulo Soares</td>
-                    <td>Funcionario</td>
-                    <td>789.654.321-25</td>
-                    <td>95862-5874</td>
-                    <td>paulo.soares@gmail.com</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
-                            <div class="dropdown-content">
-                                <a href="#" class="editarFuncionario">Editar</a>
-                                <a href="#" class="excluirFuncionario">Excluir</a>
-                                <a href="#" class="tornarProprietario">Tornar proprietário</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
+                    @foreach($funcionarios as $funcionario)
+                        <tr>
+                            <td>{{ $funcionario["nome"] }}</td>
+                            <td>{{ $funcionario["cargo"]->value }}</td>
+                            <td>{{ $funcionario["cpf"] }}</td>
+                            <td>{{ $funcionario["telefone"] }}</td>
+                            <td>{{ $funcionario["email"] }}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropbtn"><img class="imgAcoes" src="./imagens/acoes.png"></button>
+                                    <div class="dropdown-content">
+                                        <a href="#" class="editarFuncionario">Editar</a>
+                                        <a href="#" class="excluirFuncionario">Excluir</a>
+                                        <a href="#" class="tornarProprietario">Tornar proprietário</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                   @endforeach
                 </tbody>
             </table>
         </fieldset>
@@ -109,5 +94,5 @@
     </div>
 
     <script src={{ asset('js/modaisMeusDados.js') }} ></script>
-    <link rel="stylesheet" href="{{ asset('css/styleMeusDados.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styleEmpresa.css') }}">
 @endsection
