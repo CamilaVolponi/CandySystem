@@ -5,6 +5,9 @@
 @section('body')
     <form class="formLogin" action="{{ route('login.sign_in') }}" method="POST">
         @csrf
+        @php
+            $cpf_redirect = session()->get('cpf')
+        @endphp
         <div class="cardLogin">
             <div>
                 <img src="{{ asset('imagens/logo.png') }}" class="logoLogin">
@@ -13,21 +16,23 @@
 
             <div class="informacoesLogin">
                 <label>Usuário</label>
-                <input type="text" name="cpf" placeholder="Digite seu CPF" required value="{{old('cpf')}}">
+                <input type="text" name="cpf" placeholder="Digite seu CPF" required value="{{$cpf ?? $cpf_redirect ?? ''}}">
             </div>
-            
+
             <div class="informacoesLogin">
                 <label>Senha</label>
-                <input type="password" name="senha" placeholder="Digite sua senha" required value="{{old('senha')}}"> 
+                <input type="password" name="senha" placeholder="Digite sua senha" required>
             </div>
-            
-            @if ($errors->all())
+
+            @if (isset($errors) && $errors)
                 <p style="color:red;text-align: center;margin-bottom: 0.5em;">cpf ou senha inválidos</p>
             @endif
 
-            <button class="informacoesLogin">ENTRAR</button>
-            <a href="telaCadastro.html" class="informacoesLogin">Não possui cadastro?</a>
+            <button type="submit" class="informacoesLogin">ENTRAR</button>
+            <a href={{ route("cadastro.index") }} class="informacoesLogin">Não possui cadastro?</a>
         </div>
         <p class="copyright">&copy; Copyright Candy System</p>
     </form>
+
+    <link rel="stylesheet" href="{{ asset('css/styleLogin.css') }}">
 @endsection

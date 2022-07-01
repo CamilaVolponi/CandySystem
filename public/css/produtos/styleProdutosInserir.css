@@ -1,0 +1,45 @@
+.formModalInserirProduto{
+    margin-right: 1%;
+}
+
+.cadastroIngrediente, .cadastroPreparo, .cadastroProduto, .editarProdutoModal{
+    margin-top: 1%;
+    margin-left: 78%;
+    width: 20%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.tabelaInserirProduto{
+    width: 98%;
+    height: 10%;
+    border: solid 2px #3F3F46;
+    border-radius: 10px;
+    color: #3F3F46;
+    margin-top: 1%;
+}
+
+.cadastroIngrediente:hover{
+    background-color: #EA5D8E;
+}
+.cadastroPreparo:hover{
+    background-color: #EA5D8E;
+}
+.cadastroProduto:hover{
+    background-color: #EA5D8E;
+}
+
+.formModalInserirProduto label , .formModalEditarProduto label{
+    width: 20%;
+    margin-bottom: 10%;
+}
+
+.formModalInserirProduto input, .formModalEditarProduto label{
+    border-radius: 5px;
+    width: 30%;
+    height: 10px;
+    padding: 5px;
+}

@@ -1,0 +1,55 @@
+.containerRelatórios {
+    display: grid;
+    grid-template-rows: 60vh 31.8vh;
+    grid-template-areas: "relatoriosPrincipais"
+						"relatoriosSecundarios"
+}
+
+.relatoriosPrincipais{
+    box-shadow: 0px 1px 3px 1px black;
+    background-color: #F7F7F7;
+    height: auto;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    margin: 10px;
+
+}
+
+.relatoriosSecundarios{
+    box-shadow: 0px 1px 3px 1px black;
+    background-color: #F7F7F7;
+    height: auto;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    margin: 10px;
+
+}
+
+.graficosRelatorios {
+    display: inline-grid;
+    grid-template-columns: 50%;
+    grid-template-rows: 90%;
+    grid-template-areas: "grafico1 grafico2";
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.grafico1 {
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0px 1px 3px 1px black;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+.grafico2 {
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0px 1px 3px 1px black;
+    padding-left: 10px;
+}
+

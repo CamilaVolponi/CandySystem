@@ -1,0 +1,98 @@
+.botaoProdutos{
+    margin-top: 2%;
+    margin-left: 84%;
+    width: 10%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.botaoProdutos:hover{
+    background-color: #EA5D8E;
+}
+
+.formModalInserirProduto label , .formModalEditarProduto label{
+    width: 20%;
+    margin-bottom: 10%;
+}
+
+.formModalInserirProduto input, .formModalEditarProduto label{
+    border-radius: 5px;
+    width: 30%;
+    height: 10px;
+    padding: 5px;
+}
+
+/*editar produto*/
+.modalEditarProduto{
+    color: black;
+    background: white;
+    width: 50%;
+    padding: 10px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*excluir produto*/
+.modalExcluirProduto{
+    color: black;
+    background: white;
+    width: 12%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+.centralizar{
+    text-align: center;
+}
+
+/*modal editar ingrediente*/
+.modalExcluirIngrediente{
+    color: black;
+    background: white;
+    width: 16%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*modal excluir ingrediente*/
+.modalEditarIngrediente{
+    color: black;
+    background: white;
+    width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*modal editar passo*/
+.modalExcluirPasso{
+    color: black;
+    background: white;
+    width: 12%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*modal excluir passo*/
+.modalEditarPasso{
+    color: black;
+    background: white;
+    width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}

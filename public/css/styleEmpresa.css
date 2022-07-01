@@ -1,0 +1,55 @@
+.dadosEmpresa{
+    margin-top: 3%;
+    margin-right: 5%;
+    border: 3px solid #E53471;
+    padding: 10px;
+}
+
+.tituloEmpresa{
+    margin-left: 2%;
+    margin-top: 2%;
+    font-size: 20px;
+}
+
+.inserirFuncionario{
+    margin-top: 2%;
+    margin-left: 84%;
+    width: 10%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.inserirFuncionario:hover{
+    background-color: #EA5D8E;
+}
+
+.formModalInserirFuncionario{
+    margin: 2%;
+    margin-left: 25%;
+}
+
+.formModalInserirFuncionario label{
+    width: 20%;
+    margin-bottom: 10%;
+}
+
+.formModalInserirFuncionario input{
+    border-radius: 5px;
+    width: 60%;
+    height: 10px;
+    padding: 5px;
+}
+
+.cadastroFuncionario{
+    margin-top: 1%;
+    margin-left: 78%;
+    width: 20%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}

@@ -12,7 +12,7 @@
                     <a href="{{ route('main.index') }}"><img src="{{ asset('imagens/logo.png') }}" class="logo"></a>
                     <h1 class="informacaoUsuario">
                         <img src="{{ asset('imagens/meusDados.png') }}" class="iconeInformacaoUsuario">
-                        123.456.789-00
+                        {{ auth()->user()->cpf }}
                     </h1>
                     <li>
                         <a href="{{ route('pedidos.index') }}">
@@ -21,21 +21,27 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('receitas.index') }}">
-                            <img src="{{ asset('imagens/receitas.png') }}" class="iconeMenu">
-                            Receitas
+                        <a href="{{ route('produtos.index') }}">
+                            <img src="{{ asset('imagens/produto.png') }}" class="iconeMenu">
+                            Produtos
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('relatorios.index') }}">
-                            <img src="{{ asset('imagens/relatorio.png') }}" class="iconeMenu">
-                            Relatórios
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('meus_dados.index') }}">
+                        <a href="{{ route("meusDados.index") }}">
                             <img src="{{ asset('imagens/meusDados.png') }}" class="iconeMenu">
                             Meus Dados
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route("dadosEmpresa.index") }}">
+                            <img src="{{ asset('imagens/empresa.png') }}" class="iconeMenu">
+                            Área da empresa
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route("login.logout")}}">
+                            <img src="{{ asset('imagens/logout.png') }}" class="iconeMenu">
+                            Logout
                         </a>
                     </li>
                 </ul>

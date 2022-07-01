@@ -1,0 +1,89 @@
+.meusDados{
+    margin-top: 3%;
+    margin-right: 5%;
+    border: 3px solid #E53471;
+    padding: 10px;
+}
+
+.atualizarFuncionario{
+    margin-top: 2%;
+    margin-left: 84%;
+    width: 10%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.meusDados label{
+    width: 20%;
+    margin-bottom: 10%;
+}
+
+.meusDados input{
+    border-radius: 5px;
+    width: 60%;
+    height: 10px;
+    padding: 5px;
+}
+
+.formModalEditarFuncionario label{
+    width: 20%;
+    margin-bottom: 10%;
+}
+
+.formModalEditarFuncionario input{
+    border-radius: 5px;
+    width: 30%;
+    height: 10px;
+    padding: 5px;
+}
+
+/*excluir funcionario*/
+.modalExcluirFuncionario{
+    color: black;
+    background: white;
+    width: 20%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+/*adicionar cargo em funcionario*/
+.modalAdicionarCargoFuncionario{
+    color: black;
+    background: white;
+    width: 20%;
+    padding: 30px;
+    border: 10px solid #E53471;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+}
+
+.centralizar{
+    text-align: center;
+}
+
+.cadastroFuncionario, .editarFuncionarioModal{
+    margin-top: 1%;
+    margin-left: 78%;
+    width: 20%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}
+
+.editarAdicionarCargo{
+    margin-top: 1%;
+    margin-left: 50%;
+    width: 50%;
+    background-color: #E53471;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 1px;
+}

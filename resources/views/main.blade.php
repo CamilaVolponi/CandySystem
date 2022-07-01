@@ -2,37 +2,25 @@
 
 @section('title', 'Home - Candy System')
 
-@section('content')		
+@section('content')
 	<main>
-		<div class="containerNotificacoes">
-			<div class="notificacoesPedidos">
-				<div class="titleNotificacao">
-					<h2>Notificações Pedidos</h2>
-				</div>
-				<div>
-					<p>- Você possui um pedido do produto: Bolo para sábado, dia 23/04/2021.</p>
-					<p>- Você possui um pedido do produto: 1 Cento de brigadeiros para domingo, dia 24/04/2021.</p>
-					<p>- Você possui um pedido do produto: Bolo para domingo, dia 24/04/2021.</p>
-				</div>
-			</div>
-
-			<div class="calendario">
-				<div class="titleNotificacao">
-					Calendário
-				</div>
-				<div>
-					<img src="{{ asset('imagens/calendario.png') }}">
-				</div>
-			</div>
-			
-			<div class="notificacoes">
-				<div class="titleNotificacao">
-					Notificação (escolhendo)
-				</div>
-				<div>
-					
-				</div>
-			</div>
+		<div id="main">
+            @foreach($pedidos as $pedido)
+                @php
+                    $p = $pedidos->find($pedido->id);
+                    $client = $p->cliente;
+                @endphp
+                    <div class="notificacoesPedidos">
+                        <div class="titleNotificacao">
+                            <h2>Pedido do/a {{ $client->nome }}</h2>
+                        </div>
+                        <p>Dia da entrega: {{$pedido->data_entrega}}</p>
+                        <p>Hora da entrega: {{$pedido->hora_entrega}}</p>
+                        <a href="{{ route('pedidos.show', "$pedido->id")}}" class="visualizarPedido">Visualizar</a>
+                    </div>
+            @endforeach
 		</div>
 	</main>
+
+    <link rel="stylesheet" href="{{ asset('css/styleMain.css') }}">
 @endsection
